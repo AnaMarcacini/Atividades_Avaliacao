@@ -7,6 +7,10 @@ public class Usuários {
     public Usuários(String nome, String cpf, String email, Conta conta){
         this.nome = nome;
         this.cpf = cpf;
+        System.out.println("" + ValidadorCPF.validar(cpf));
+        if(ValidadorCPF.validar(cpf)==false){
+            
+        }  
         this.email = email;
         this.conta = conta;
     }
