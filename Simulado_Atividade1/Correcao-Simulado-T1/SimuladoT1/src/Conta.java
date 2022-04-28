@@ -4,7 +4,7 @@ public class Conta {
     private static int totalContas = 0;
     public Conta() {
         this.saldo = 0;//  Tanto faz     saldo = 0;//
-        this.idConta = totalContas;//tanto faz --  this.idConta = totalContas;  -- recomendado não misturar ambas no codigo
+        idConta = totalContas;//tanto faz --  this.idConta = totalContas;  -- recomendado não misturar ambas no codigo
 
         totalContas++;//atributo da classe -- não pode this.totalcontas
     }
