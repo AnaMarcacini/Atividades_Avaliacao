@@ -6,6 +6,7 @@ public class Atividade1 {
         Bicicleta b1 = new Bicicleta(1234);
         //Carro c1 = new Carro(1234);
         //Patinete p1 = new Patinete(1234);
+        int contador = 0;
 
         
         Usuario a1 = new Usuario("Ana",m1);
@@ -16,17 +17,25 @@ public class Atividade1 {
         System.out.println(a2.Testar());
 
 
+        System.out.println(contador);
 
         System.out.println("Depois da troca ________________________________________________________________________________________________________________________________________________________________________________");
 
         if(a1.Trocar("Carro")){
             System.out.println("Troca realizada com sucesso \n estado atual do usuario");
             System.out.println(a1.Testar());
+            contador = contador+1;
+
+            System.out.println(contador);
         }
 
         if(a2.Trocar("Moto")){
             System.out.println("Troca realizada com sucesso \n estado atual do usuario");
             System.out.println(a2.Testar());
+
+
+            contador = contador+1;
+            System.out.println(contador);
         }
 
 
