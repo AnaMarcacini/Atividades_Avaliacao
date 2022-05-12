@@ -1,18 +1,40 @@
-## Getting Started
+# Trabalho
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
+compartilhar alguns recursos de locomoção.
 
-The workspace contains two folders by default, where:
+carro, moto, bicicleta e patinete. -->Cada um desses veículos compartilha algumas
+características e possui alguns detalhes específicos.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+# Main
+solução criando em uma classe aplicação um
+usuário e troque o bem compartilhado com ele para cada um dos disponíveis no sistema.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Cada vez que a troca acontecer,invoque o comportamento testar().
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Importante: 
+cada vez que um objeto for atribuído, um contador de bens compartilhados deve ser incrementado no usuário.
 
-## Dependency Management
+DUVIDA : contador individual ou coletivo
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+# usuário
+
+    nome
+    pode utilizar um meio compartilhado por vez
+    simular o empréstimo de um bem compartilhado e trocar ele por outros.
+
+    Método testar
+    Quando o usuário estiver com o bem compartilhado, ele deve
+chamar o mesmo comportamento: testar
+
+# BensCompartilhados
+
+    id(valor inteiro aleatório de 5 dígitos) 
+    custo por hora
+    seu tipo.
+    Devem implantar o método testar(
+## Metodos
+    testar :
+
+        exibir o ID do bem + custo por hora do aluguel do veículo.
+        Exibir contador de trocas
