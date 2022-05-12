@@ -28,6 +28,10 @@ public class Atividade1 {
 
             System.out.println(contador);
         }
+        else{
+            System.out.println("erro na troca");
+        }
+
 
         if(a2.Trocar("Moto")){
             System.out.println("Troca realizada com sucesso \n estado atual do usuario");
@@ -37,6 +41,38 @@ public class Atividade1 {
             contador = contador+1;
             System.out.println(contador);
         }
+        else{
+            System.out.println("erro na troca");
+        }
+
+
+        System.out.println("Depois da troca 2º troca________________________________________________________________________________________________________________________________________________________________________________");
+
+
+
+        if(a1.Trocar("Patinete")){
+            System.out.println("Troca realizada com sucesso \n estado atual do usuario");
+            System.out.println(a1.Testar());
+            contador = contador+1;
+
+            System.out.println(contador);
+        }
+        else{
+            System.out.println("erro na troca");
+        }
+
+        if(a2.Trocar("Moto")){
+            System.out.println("Troca realizada com sucesso \n estado atual do usuario");
+            System.out.println(a2.Testar());
+
+
+            contador = contador+1;
+            System.out.println(contador);
+        }
+        else{
+            System.out.println("erro na troca");
+        }
+
 
 
 
