@@ -1,7 +1,7 @@
 public class Usuario {
     private String nome;
     private BensComp veiculo;
-    private int contador = 0;
+    private static int contador = 0;
 
 
 
