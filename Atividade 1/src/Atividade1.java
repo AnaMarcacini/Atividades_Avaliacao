@@ -7,8 +7,8 @@ public class Atividade1 {
         //Carro c1 = new Carro(1234);
         //Patinete p1 = new Patinete(1234);
         
-        Usuario a1 = new Usuario("Ana",m1);
-        Usuario a2 = new Usuario("AnaH",b1);
+        Usuario a1 = new Usuario("Marco",m1);
+        Usuario a2 = new Usuario("Ana",b1);
         System.out.println("Antes da troca ________________________________________________________________________________________________________________________________________________________________________________");
 
         System.out.println(a1.Testar());
