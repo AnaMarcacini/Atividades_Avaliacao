@@ -1,7 +1,3 @@
-import java.util.Arrays;
-
-import javax.sound.midi.Soundbank;
-import javax.swing.text.StyledEditorKit.BoldAction;
 
 public class Hackers implements InterfaceHackers{
 
@@ -20,6 +16,11 @@ public class Hackers implements InterfaceHackers{
 
     public void PostarMensagem(boolean hora) {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Hackers [email=" + email + ", nome=" + nome + "]";
     }
 
     // @Override

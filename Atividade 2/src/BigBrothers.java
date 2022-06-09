@@ -19,11 +19,12 @@ public class BigBrothers extends Hackers{
             Hackers a = new BigBrothers(nome, email);
             return a;
         }
+        else
         if(tipo == EnumFuncionarios.HeavyLifters){
             Hackers a = new HeavyLifters(nome, email);
             return a;
         }
-        if(tipo == EnumFuncionarios.MobileMembers){
+        else{
             Hackers a = new MobileMembers(nome, email);
             return a;
         }
