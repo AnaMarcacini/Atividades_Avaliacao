@@ -37,11 +37,11 @@ public class Sistema {
             funcionario.PostarMensagem(horarioDeTrabalho);
         }
 
-        for (Hackers funcionario : funcinarios){
-            System.out.println(funcinarios);
+        for (Hackers func : funcinarios){
+            System.out.println(func);
         }
 
-
+        
 
     }
 //metodos
