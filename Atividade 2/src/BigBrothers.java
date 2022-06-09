@@ -14,10 +14,19 @@ public class BigBrothers extends Hackers{
 
 
 
-    public Hackers CadastrarMembro(String nome, String email){
-        Hackers a = new Hackers(nome, email);
-        return a;
-
+    public Hackers CadastrarMembro(String nome, String email, EnumFuncionarios tipo){
+        if(tipo == EnumFuncionarios.BigBrothers){
+            Hackers a = new BigBrothers(nome, email);
+            return a;
+        }
+        if(tipo == EnumFuncionarios.HeavyLifters){
+            Hackers a = new HeavyLifters(nome, email);
+            return a;
+        }
+        if(tipo == EnumFuncionarios.MobileMembers){
+            Hackers a = new MobileMembers(nome, email);
+            return a;
+        }
     }
 
 

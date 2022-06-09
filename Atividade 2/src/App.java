@@ -7,7 +7,6 @@ public class App {
         Sistema.run();
 
 
-        // criar lista ligada de funcionarios
 
         // criar imagem de boas vindas
 
