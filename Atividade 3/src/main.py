@@ -11,25 +11,24 @@ global pagina
 pagina = "login"
 
 if pagina == "login":
-    log.AbrirLogin(pagina)
+    log.AbrirLogin()
 
 
 if pagina == "Home":
-    home.AbrirHome(pagina)
+    home.AbrirHome()
 
 
-"""
-#st.session_state["pagina"] = "login"
+
+##st.session_state["pagina"] = "login"
 
 
-if st.session_state["pagina"] == "login":
-    log.AbrirLogin(st.session_state["pagina"])
+#if st.session_state["pagina"] == "login":
+#    log.AbrirLogin(st.session_state["pagina"])
 
 
-if st.session_state["pagina"] == "Home":
-    home.AbrirHome(st.session_state["pagina"])
+#if st.session_state["pagina"] == "Home":
+#    home.AbrirHome(st.session_state["pagina"])
     
-   """ 
     
     
 #st.sidebar.title("temporario")

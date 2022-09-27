@@ -11,7 +11,7 @@ with main:
             )
 
 
-def AbrirHome(a):
+def AbrirHome():
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
     with main:
         st.title("Home")
