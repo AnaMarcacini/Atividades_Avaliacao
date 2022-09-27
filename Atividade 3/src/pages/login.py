@@ -24,10 +24,10 @@ def AbrirLogin(a):
     def fui_apertado():
         print("Chamar validador de senhas")
         st.session_state["A1"] = "Chamar validador de senhas"
-        #home.AbrirHome()
+        home.AbrirHome()
         #st.session_state["pagina"] == "Home"
         #pagina = "Home"
-        a = "Home"
+        #a = "Home"
 
 
     st.button(
