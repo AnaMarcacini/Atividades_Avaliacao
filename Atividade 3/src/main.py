@@ -3,44 +3,33 @@ from turtle import onclick
 import streamlit as st
 import webbrowser
 import pages.home as home
-st.title("Login")
-st.write("Faça seu login ou crie uma conta com a gente 😁")
+import pages.login as log
+
+global pagina
 
 
-col1, col2= st.columns([3,1])
-with col1:
-    text_input = st.text_input(
-        "Digite o nome do Usuário :",
-        placeholder = "Usuário 🙍‍♂️"
-    )
-    text_input = st.text_input(
-        "Digite a senha :",
-        placeholder = "Senha 🔒"
-    )
+pagina = "login"
 
-def fui_apertado():
-    print("Chamar validador de senhas")
-    st.session_state["A1"] = "Chamar validador de senhas"
-    home.AbrirHome()
+if pagina == "login":
+    log.AbrirLogin(pagina)
 
-st.button(
-        label="🚪 Entrar 🔓",
-        help="Entrar na loja",
-        on_click=fui_apertado,
-)
-with col2:
-    st.image(   
-        image="assets/perfilb.png",
-        #caption=""
-    )
+
+if pagina == "Home":
+    home.AbrirHome(pagina)
+
+
+"""
+#st.session_state["pagina"] = "login"
+
+
+if st.session_state["pagina"] == "login":
+    log.AbrirLogin(st.session_state["pagina"])
+
+
+if st.session_state["pagina"] == "Home":
+    home.AbrirHome(st.session_state["pagina"])
     
-st.snow()
-if "A1" in st.session_state:
-        text_input = st.text_input("",value = st.session_state["A1"], disabled = True,
-        
-    )
-
+   """ 
+    
+    
 #st.sidebar.title("temporario")
-
-
-
