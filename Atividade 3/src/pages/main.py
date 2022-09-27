@@ -91,5 +91,12 @@ with cadastro:
             image="assets/professor_oak.jpg",
             caption="Professor Oak"
         )
+    
+    import webbrowser
 
-st.sidebar.title("Navegação")
+    url = 'https://www.streamlit.io/'
+
+    if st.button('Open browser'):
+        webbrowser.open_new_tab(url)
+
+#st.sidebar.title("Navegação")

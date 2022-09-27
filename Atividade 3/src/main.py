@@ -1,7 +1,8 @@
 from cProfile import label
 from turtle import onclick
 import streamlit as st
-
+import webbrowser
+import pages.home as home
 st.title("Login")
 st.write("Faça seu login ou crie uma conta com a gente 😁")
 
@@ -20,6 +21,7 @@ with col1:
 def fui_apertado():
     print("Chamar validador de senhas")
     st.session_state["A1"] = "Chamar validador de senhas"
+    home.AbrirHome()
 
 st.button(
         label="🚪 Entrar 🔓",
@@ -38,4 +40,7 @@ if "A1" in st.session_state:
         
     )
 
-st.sidebar.title("temporario")
+#st.sidebar.title("temporario")
+
+
+
