@@ -122,9 +122,12 @@ def AbrirHome():
                 )
 
     with carrinho:
-        pass
-
-
+        col1, col2 = st.columns([4,1])
+        with col1:
+            st.write("oiii")
+        with col2:
+            st.title("Carrinho🛒")
+            percorrerCarrinho()
 
 
 #FUNÇÕES BASE
