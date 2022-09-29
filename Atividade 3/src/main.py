@@ -17,7 +17,6 @@ if pagina == "Home":
     home.AbrirHome()
 
 
-
 ##st.session_state["pagina"] = "login"
 
 
