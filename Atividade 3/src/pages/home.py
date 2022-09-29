@@ -20,6 +20,7 @@ def percorrerCarrinho() :
     for produto in st.session_state["carrinho"]:
         print(produto)
         print("\n")
+        print("Produto atual")
         st.write(produto)
         texto = produto + "\n " + texto
         return texto
