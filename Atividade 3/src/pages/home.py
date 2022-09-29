@@ -2,8 +2,6 @@ from ipaddress import collapse_addresses
 from numpy import true_divide
 import streamlit as st
 
-st.session_state["carrinho"] = []
-
 
 ### Funções
 
@@ -20,6 +18,8 @@ def percorrerCarrinho() :
         st.write(texto)
 
 def AbrirHome():
+    
+    st.session_state["carrinho"] = []
 
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
     with main:
