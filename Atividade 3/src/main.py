@@ -7,7 +7,6 @@ import pages.login as log
 
 global pagina
 
-
 pagina = "login"
 
 if pagina == "login":
