@@ -1,13 +1,19 @@
 from ipaddress import collapse_addresses
 from numpy import true_divide
 import streamlit as st
-
+import models.product as prod
 
 ### Funções
 
 def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
     st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
-    percorrerCarrinho()
+    #percorrerCarrinho()
+
+#def adicionarCarrinhoN(Product produto):
+#    pass
+
+
+
 
 def percorrerCarrinho() :
     for produto in st.session_state["carrinho"]:
@@ -15,7 +21,8 @@ def percorrerCarrinho() :
         print("\n")
         #st.write(produto)
         texto = produto + "\n "
-        st.write(texto)
+        #st.write(texto)
+        return texto
 
 def AbrirHome():
     
@@ -122,11 +129,21 @@ def AbrirHome():
                 )
 
     with carrinho:
-        col1, col2 = st.columns([4,1])
-        with col1:
-            st.write("oiii")
-        with col2:
-            st.title("Carrinho🛒")
+        dadosCartao, compras = st.columns([4,1])
+        with dadosCartao:#Dados da compra
+            st.text_input("Titular: ")
+            st.text_input("CPF ou CNPJ: ")
+            st.text_input("Numero: ")
+            st.text_input("codigo cvv: ")
+            st.write("Validade")
+            option = st.selectbox(
+                    'més',
+                    ('1', '2', '3',"4","5","6","7","8","9","10","12"))
+            option = st.selectbox(
+                    'Ano',
+                    ('2022', '2023',"2024","2025","2026","2027","2028","2029"))
+        with compras:#lista de compras
+            st.header("Carrinho🛒")
             percorrerCarrinho()
 
 
