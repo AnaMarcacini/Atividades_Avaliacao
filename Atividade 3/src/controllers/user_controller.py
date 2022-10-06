@@ -8,6 +8,9 @@ class UserController():
             User(name="joao", password="arroz", email="joao@mail.com"),
             User(name="joao2", password="arroz2", email="joao@amaarroz.com"),
             User(name="tais", password="petacular", email="tais_@condida.com"),
+            User(name="Ana", password="Ana", email="Ana"),
+            User(name="a@gmail.com", password="a", email="a@gmail.com"),
+            
         ]
     def checkUser(self,user):
         return user in self.users

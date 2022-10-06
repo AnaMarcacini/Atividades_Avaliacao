@@ -1,12 +1,17 @@
 from ipaddress import collapse_addresses
 from numpy import true_divide
 import streamlit as st
-import models.product as prod
-
+import models.product as Product
 ### Funções
 
 def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
-    st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
+    preco = preco[2::]
+    preco = preco.replace('.', ', ') 
+    preco = float (preco)
+    prod = Product(nome , preco)
+    print (prod)
+    st.session_state["carrinho"].append(prod)
+    #st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
     #percorrerCarrinho()
 
 #def adicionarCarrinhoN(Product produto):
@@ -18,16 +23,17 @@ def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
 def percorrerCarrinho() :
     texto = ""
     for produto in st.session_state["carrinho"]:
+        print("Produto atual")
         print(produto)
         print("\n")
-        print("Produto atual")
-        st.write(produto)
+        #st.write(produto)
         texto = produto + "\n " + texto
-        return texto
+    return texto
 
 def AbrirHome():
-    
+
     st.session_state["carrinho"] = []
+    
 
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
     with main:
@@ -67,7 +73,8 @@ def AbrirHome():
             st.metric("Preço", "R$ 150,00 ", "15%")
             st.button(
                 "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho(a,"R$ 150,00"),
+                on_click = adicionarCarrinho,
+                kwargs={"nome":b, "preco":"150,09"},
                 key= 1111
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -193,6 +200,8 @@ def AbrirHome():
             option = st.selectbox(
                     'Ano',
                     ('2022', '2023',"2024","2025","2026","2027","2028","2029"))
+            st.text_input("Endereço ")
+            st.text_input("Numero do apartamento: ")
         with compras:#lista de compras
             st.header("Carrinho🛒")
             st.write(percorrerCarrinho())

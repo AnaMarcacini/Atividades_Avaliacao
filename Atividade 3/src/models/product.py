@@ -1,7 +1,7 @@
 class Product():
-    def __init__(self, name, price, url) -> None:
+    def __init__(self, name, price) -> None:
         self.name = name
         self.price = price
-        self.url = url
+        #self.url = url
     def __str__(self) -> str:
-        return f'Product(name"{self.name}, price:{self.price}, url:{self.url})'
+        return f'{self.name}--- preço :{self.price})'
