@@ -5,17 +5,17 @@ import models.product as Product
 ### Funções
 
 def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
+    """
     preco = preco[2::]
-    preco = preco.replace('.', ', ') 
-    preco = float (preco)
+    preco = preco.replace(',', '. ') 
+    preco = float(preco)
     prod = Product(nome , preco)
     print (prod)
+    
     st.session_state["carrinho"].append(prod)
-    #st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
+    """
+    st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
     #percorrerCarrinho()
-
-#def adicionarCarrinhoN(Product produto):
-#    pass
 
 
 
@@ -40,7 +40,7 @@ def AbrirHome():
 
         st.title("Home")
         imagensBanner = ["assets/B1.jpg","assets/B2.jpg"]
-        st.image(   
+        st.image( #Banner  
                 image=imagensBanner,
                 #caption=""
             )
@@ -48,62 +48,72 @@ def AbrirHome():
 ##PRODUTOS __________________________________________________________________________________
 
         p11,p12,p13,p14,p15 = st.columns([3,3,3,3,1])
-        a = "fone de ouvido"
-        b = "Computador"
-        c = "Tablet"
-        d = "Celular"
         with p11:
-            st.image(   
-                    image="assets/prod.png",
-                    caption=a
-                )     
-                
-            st.metric("Preço", "R$ 50,00 ", "12%")
-            st.button(
-                "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho(a, "R$ 50,00 ")
-            )
+            fone = "fone de ouvido"
+            preco_fone = "R$ 50,00"
 
-        with p12:
             st.image(   
                     image="assets/prod.png",
-                    caption= b
+                    caption=fone
                 )     
                 
-            st.metric("Preço", "R$ 150,00 ", "15%")
+            st.metric("Preço",preco_fone, "12%")
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"nome":b, "preco":"150,09"},
+                kwargs={"nome":fone, "preco":preco_fone},
+
+            )
+
+        with p12:
+            pc = "Computador"
+            preco_pc = "R$ 150,00 "
+
+            st.image(   
+                    image="assets/prod.png",
+                    caption= pc
+                )     
+                
+            st.metric("Preço", preco_pc, "15%")
+            st.button(
+                "Add Carrinho 🛒",            
+                on_click = adicionarCarrinho,
+                kwargs={"nome":pc, "preco":preco_pc},
                 key= 1111
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
             )
         with p13:
+            tablet = "Tablet"
+            preco_tablet = "R$ 90,00 "
             st.image(   
                     image="assets/prod.png",
-                    caption=c
+                    caption=tablet
                 )     
                 
-            st.metric("Preço", "R$ 90,00 ",0)
+            st.metric("Preço", preco_tablet,0)
             st.button(
                 "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho(c,"R$ 90,00 "),
+                on_click = adicionarCarrinho,
+                kwargs={"nome":tablet, "preco":preco_tablet},
                 key=12
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
             )
 
         with p14:
+
+            preco_fone2 = "R$ 30,00"
             st.image(   
                     image="assets/prod.png",
-                    caption=d
+                    caption=fone
                 )     
                 
-            st.metric("Preço", "R$ 30,00 ", "10%")
+            st.metric("Preço",preco_fone2 , "10%")
             st.button(
                 "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho(d,"R$ 30,00"),
+                on_click = adicionarCarrinho,
+                kwargs={"nome":fone, "preco":preco_fone},
                 key=1
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -118,43 +128,51 @@ def AbrirHome():
         st.header("Produtos Relacionados")
         p1,p2,p3,p4,p5 = st.columns([3,3,3,3,1])
         with p1:
+            preco_fone3 = "R$ 50,00"
             st.image(   
                     image="assets/prod.png",
-                    caption=c
+                    caption=fone
                 )     
                 
-            st.metric("Preço", "R$ 50,00 ", "12%")
+            st.metric("Preço", preco_fone3 , "12%")
             st.button(
                 "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho(c,"R$ 50,00 "),
+                on_click = adicionarCarrinho,
+                kwargs={"nome":fone, "preco":preco_fone3},
                 key=13
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
             )
         with p2:
+            cel = "Celular"
+            preco_cel = "R$ 150,00"
+
             st.image(   
                     image="assets/prod.png",
-                    caption=d
+                    caption=cel
                 )     
                 
-            st.metric("Preço", "R$ 150,00 ", "15%")
+            st.metric("Preço",preco_cel , "15%")
             st.button(
                 "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho(d,"R$ 150,00 "),
+                on_click = adicionarCarrinho,
+                kwargs={"nome":cel, "preco":preco_cel},
                 key=2
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
             )
         with p3:
+            preco_cel2 = "R$ 1500,00"
             st.image(   
                     image="assets/prod.png",
-                    caption=b
+                    caption=cel
                 )     
                 
-            st.metric("Preço", "R$ 90,00 ",0)
+            st.metric("Preço", preco_cel2,0)
             st.button(
                 "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho(b,"R$ 90,00 "),
+                on_click = adicionarCarrinho,
+                kwargs={"nome":cel, "preco":preco_cel2},
                 key = 3
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -176,7 +194,10 @@ def AbrirHome():
 
             st.button(
                 "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho(st.session_state["p14"],"R$ 30,00"),
+                #on_click = adicionarCarrinho(st.session_state["p14"],"R$ 30,00"),
+                
+                on_click = adicionarCarrinho,
+                kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 key = 4
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -205,26 +226,6 @@ def AbrirHome():
         with compras:#lista de compras
             st.header("Carrinho🛒")
             st.write(percorrerCarrinho())
-
-
-#FUNÇÕES BASE
-
-def somar_dois(v1,v2):
-    resultado = v1+v2
-    st.session_state["kratos"] = resultado
-
-
-if "kratos" in st.session_state:
-        st.metric(
-                label="Resultado:",
-                value=st.session_state["kratos"]
-        )
-#else:
-        #st.write("Ainda nenhum calculo foi realizado!")
-
-
-    
-
 
 
 #______________________________________________________________________________________________

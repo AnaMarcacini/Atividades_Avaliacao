@@ -25,11 +25,14 @@ def AbrirLogin():
         print("Chamar validador de senhas")
         user1 = User(usuario, usuario, senha)
         print (user1)
-        if (verificar.checkUser(user1)):
+        if (verificar.UserController().checkLogin(usuario,senha)):
             home.AbrirHome()
-        #st.session_state["pagina"] == "Home"
-        #pagina = "Home"
-        #a = "Home"
+            #st.session_state["pagina"] == "Home"
+            #pagina = "Home"
+            #a = "Home"
+            #print("usuario encontrado mas vc é uma anta")
+        else:
+            print("usuario não encontrado")
     st.button(
             label="🚪 Entrar 🔓",
             help="Entrar na loja",
