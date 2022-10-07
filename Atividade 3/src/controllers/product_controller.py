@@ -1,7 +1,7 @@
 from models.product import Product
 
 
-class UserController():
+class ProductController():
     def __init__(self) -> None:
         #Carrega os dados dos usuários
         self.produtos = [#estoque
