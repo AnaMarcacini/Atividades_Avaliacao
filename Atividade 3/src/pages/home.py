@@ -2,8 +2,9 @@ from ipaddress import collapse_addresses
 from numpy import true_divide
 import streamlit as st
 import models.product as Product
+import controllers.product_controller as controladorProduto
 ### Funções
-
+'''
 def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
     """
     preco = preco[2::]
@@ -17,7 +18,19 @@ def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
     st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
     #percorrerCarrinho()
 
+'''
 
+def adicionarCarrinho(nome, preco):
+        #if (verificar.UserController().checkLogin(usuario,senha)):
+        #import controllers.user_controller as verificar
+        controladorProduto.ProductController().carrinho.append
+        #PAREI AQUI
+
+
+
+
+
+    
 
 
 def percorrerCarrinho() :
@@ -32,7 +45,7 @@ def percorrerCarrinho() :
 
 def AbrirHome():
 
-    st.session_state["carrinho"] = []
+    #st.session_state["carrinho"] = []
     
 
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
