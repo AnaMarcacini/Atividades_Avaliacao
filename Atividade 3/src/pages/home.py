@@ -45,6 +45,7 @@ def AbrirHome():
 ##PRODUTOS __________________________________________________________________________________
 
         p11,p12,p13,p14,p15 = st.columns([3,3,3,3,1])
+        
         with p11:
             fone = "fone de ouvido"
             preco_fone = "R$ 50,00"
@@ -200,7 +201,7 @@ def AbrirHome():
             st.text_input("Numero do apartamento: ")
         with compras:#lista de compras
             st.header("Carrinho🛒")
-            st.write(percorrerCarrinho())
+            st.markdown(percorrerCarrinho())
             st.button(
                 "Limpar Carrinho 🛒",            
                 on_click = limparCarrinho

@@ -18,11 +18,9 @@ class ProductController():
         self.carrinho = []
 
     def addCarrinho(self,indicee):
-        print("entrou na segunda fnção")
         indicee = int(indicee)
-        print(indicee)
         self.carrinho.append(self.produtos[indicee])
-        print("add")
+        print("tamanho carrinho")
         print(len(self.carrinho))
 
         #c = st.session_state["a"].produtos[indice]
@@ -35,14 +33,9 @@ class ProductController():
         total = 0
         for item in self.carrinho:
             preco = item.getPreco()
-            print(preco)
             preco = preco[2::]
-            print(preco)
             preco = preco.replace(',', '.') 
-            print(preco)
             preco = float(preco)
-            print(preco)
-
             total = total+preco
         return total
 
@@ -54,11 +47,12 @@ class ProductController():
             print(produto)
             print("\n")
             p = str(produto)
-            texto = p + "\n " + texto
+            texto = texto + "\n \n \n " + p
         soma = self.somaCarrinho()
         soma = str(soma)
         texto = texto + "\n \n \n  -------- \n " + soma
-
+        print("resultado final :::::: \n\n\n\n")
+        print(texto)
         return texto
 
     def setCarrinho(self):

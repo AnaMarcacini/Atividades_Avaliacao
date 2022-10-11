@@ -5,7 +5,7 @@ class Product():
         #self.url = url especifica futuro
         self.url = "assets/prod.png"
     def __str__(self) -> str:
-        return f'{self.name}--- preço :{self.price})'
+        return f'{self.name} -- {self.price})'
 
 
     def getPreco(self):
