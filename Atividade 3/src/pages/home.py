@@ -62,7 +62,7 @@ def AbrirHome():
                 
             )
 
-        with p12:
+        with p12:#produto fora de indice
             try:
                 st.image(   
                     image=st.session_state["a"].produtos[1].getUrl() ,
@@ -78,7 +78,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"indice":1},
+                kwargs={"indice":11},
                 key= 1111
             )
         with p13:
