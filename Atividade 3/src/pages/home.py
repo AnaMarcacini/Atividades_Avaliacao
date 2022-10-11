@@ -19,24 +19,6 @@ def adicionarCarrinho(indice):
 
 
 
-# '''
-# def adicionarCarrinho(nome, preco ):
-#         b = p.Product(nome,preco)
-#         st.session_state["a"].carrinho.append(b)
-#         #controladorProduto.ProductController().carrinho.append
-# '''
-# def percorrerCarrinho() :
-#     texto = ""
-#     for produto in st.session_state["a"].getCarrinho():
-#         print("Produto atual")
-#         print(produto)
-#         print("\n")
-#         p = str(produto)
-#         texto = p + "\n " + texto
-#     soma = st.session_state["a"].somaCarrinho()
-#     texto = texto + "\n \n \n  -------- \n " + soma
-
-#     return texto
 
 def percorrerCarrinho() :
     return st.session_state["a"].verCarrinho()
