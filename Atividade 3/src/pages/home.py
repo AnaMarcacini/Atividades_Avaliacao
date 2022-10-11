@@ -5,7 +5,7 @@ import streamlit as st
 import models.product as p
 import controllers.product_controller as controladorProduto
 ### Funções
-'''
+''' Carrinho em formato de string e texto sem o tipo carrinho
 def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
     """
     preco = preco[2::]
@@ -19,30 +19,6 @@ def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
     st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
     #percorrerCarrinho()
 
-'''
-
-def adicionarCarrinho(nome, preco ):
-        #if (verificar.UserController().checkLogin(usuario,senha)):
-        #import controllers.user_controller as verificar
-        b = p.Product(nome,preco)
-        st.session_state["a"].carrinho.append(b)
-        #controladorProduto.ProductController().carrinho.append
-        #PAREI AQUI
-
-def percorrerCarrinho() :
-    texto = ""
-    for produto in st.session_state["a"].carrinho:
-        print("Produto atual")
-        print(produto)
-        print("\n")
-        #st.write(produto)
-        texto = produto + "\n " + texto
-    return texto
-
-
-
-    
-
 """
 def percorrerCarrinho() :
     texto = ""
@@ -54,6 +30,31 @@ def percorrerCarrinho() :
         texto = produto + "\n " + texto
     return texto
 """
+
+'''
+
+
+
+def adicionarCarrinho(indice):
+    st.session_state["a"].carrinho.append(st.session_state["a"].produtos(indice))
+'''
+def adicionarCarrinho(nome, preco ):
+        b = p.Product(nome,preco)
+        st.session_state["a"].carrinho.append(b)
+        #controladorProduto.ProductController().carrinho.append
+'''
+def percorrerCarrinho() :
+    texto = ""
+    for produto in st.session_state["a"].carrinho:
+        print("Produto atual")
+        print(produto)
+        print("\n")
+        p = str(produto)
+        texto = p + "\n " + texto
+    return texto
+
+
+
 def AbrirHome():
 
     #st.session_state["carrinho"] = []
@@ -85,7 +86,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"nome":fone, "preco":preco_fone},
+                kwargs={"indice":1},
 
             )
 
