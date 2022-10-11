@@ -25,7 +25,7 @@ class ProductController():
         try:
             self.carrinho.append(self.produtos[indicee])
         except:
-            a = Product("produto não existe ou esgotou",price="00000,000")
+            a = Product("produto não existe ou esgotou",price="0,00")
             self.carrinho.append(a)
 
         print("tamanho carrinho")
