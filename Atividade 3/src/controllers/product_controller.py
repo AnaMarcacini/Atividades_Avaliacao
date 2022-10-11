@@ -23,6 +23,15 @@ class ProductController():
         #c = st.session_state["a"].produtos[indice]
         #st.session_state["a"].carrinho.append(c)
 
+    def  getCarrinho(self):
+        return self.carrinho
+
+    def somaCarrinho(self):
+        total = 0
+        for item in self.carrinho():
+            total = total+item.getPreco()
+        return total
+
 
 
     '''

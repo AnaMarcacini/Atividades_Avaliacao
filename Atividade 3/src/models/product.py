@@ -5,3 +5,8 @@ class Product():
         #self.url = url
     def __str__(self) -> str:
         return f'{self.name}--- preço :{self.price})'
+
+
+    def getPreco(self):
+        return self.price
+        

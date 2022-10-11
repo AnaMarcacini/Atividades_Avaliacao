@@ -50,20 +50,21 @@ def adicionarCarrinho(indice):
 # '''
 def percorrerCarrinho() :
     texto = ""
-    for produto in st.session_state["a"].carrinho:
+    for produto in st.session_state["a"].getCarrinho():
         print("Produto atual")
         print(produto)
         print("\n")
         p = str(produto)
         texto = p + "\n " + texto
+    soma = st.session_state["a"].somaCarrinho()
+    texto = texto + "\n \n \n  -------- \n " + soma
+
     return texto
 
 
 
 def AbrirHome():
     st.session_state["a"] = ProductController()
-
-
     #st.session_state["carrinho"] = []
     #st.session_state["a"] = controladorProduto.ProductController()
 
@@ -74,7 +75,6 @@ def AbrirHome():
         imagensBanner = ["assets/B1.jpg","assets/B2.jpg"]
         st.image( #Banner  
                 image=imagensBanner,
-                #caption=""
             )
         st.header("Mais Vendidos")
 ##PRODUTOS __________________________________________________________________________________
@@ -112,10 +112,8 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"nome":pc, "preco":preco_pc},
+                args=(1),
                 key= 1111
-                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
-                #(nome, preco)
             )
         with p13:
             tablet = "Tablet"
@@ -129,7 +127,8 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"nome":tablet, "preco":preco_tablet},
+                args=(1),
+                #kwargs={"nome":tablet, "preco":preco_tablet},
                 key=12
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -147,7 +146,8 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"nome":fone, "preco":preco_fone},
+                args=(0),
+                #kwargs={"nome":fone, "preco":preco_fone},
                 key=1
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -172,7 +172,8 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"nome":fone, "preco":preco_fone3},
+                args=(2),
+                #kwargs={"nome":fone, "preco":preco_fone3},
                 key=13
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -190,7 +191,8 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"nome":cel, "preco":preco_cel},
+                args=(6),
+                #kwargs={"nome":cel, "preco":preco_cel},
                 key=2
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -206,7 +208,8 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"nome":cel, "preco":preco_cel2},
+                args=(1),
+                #kwargs={"nome":cel, "preco":preco_cel2},
                 key = 3
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
@@ -231,7 +234,8 @@ def AbrirHome():
                 #on_click = adicionarCarrinho(st.session_state["p14"],"R$ 30,00"),
                 
                 on_click = adicionarCarrinho,
-                kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
+                args=(1),
+                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 key = 4
                 #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 #(nome, preco)
