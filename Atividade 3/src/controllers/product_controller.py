@@ -31,8 +31,6 @@ class ProductController():
         print("tamanho carrinho")
         print(len(self.carrinho))
 
-        #c = st.session_state["a"].produtos[indice]
-        #st.session_state["a"].carrinho.append(c)
 
     def  getCarrinho(self):
         return self.carrinho
