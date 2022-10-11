@@ -4,20 +4,13 @@ from numpy import true_divide
 import streamlit as st
 import models.product as p
 #import controllers.product_controller as controladorProduto
-
 from controllers.product_controller import ProductController
-
-
-
-### Funções
 
 
 
 def adicionarCarrinho(indice):
     st.session_state["a"].addCarrinho(indice)
     #st.session_state["a"].carrinho.append(st.session_state["a"].produtos[indice])
-
-
 
 
 def percorrerCarrinho() :
@@ -28,8 +21,6 @@ def percorrerCarrinho() :
 
 def AbrirHome():
     st.session_state["a"] = ProductController()
-    #st.session_state["carrinho"] = []
-    #st.session_state["a"] = controladorProduto.ProductController()
 
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
     with main:
@@ -91,10 +82,7 @@ def AbrirHome():
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
                 args=(1),
-                #kwargs={"nome":tablet, "preco":preco_tablet},
                 key=12
-                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
-                #(nome, preco)
             )
 
         with p14:
@@ -110,10 +98,7 @@ def AbrirHome():
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
                 args=(0),
-                #kwargs={"nome":fone, "preco":preco_fone},
                 key=1
-                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
-                #(nome, preco)
             )
 
         with p15:
@@ -136,10 +121,7 @@ def AbrirHome():
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
                 args=(2),
-                #kwargs={"nome":fone, "preco":preco_fone3},
                 key=13
-                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
-                #(nome, preco)
             )
         with p2:
             cel = "Celular"
@@ -155,10 +137,7 @@ def AbrirHome():
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
                 args=(6),
-                #kwargs={"nome":cel, "preco":preco_cel},
                 key=2
-                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
-                #(nome, preco)
             )
         with p3:
             preco_cel2 = "R$ 1500,00"
@@ -172,10 +151,7 @@ def AbrirHome():
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
                 args=(1),
-                #kwargs={"nome":cel, "preco":preco_cel2},
                 key = 3
-                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
-                #(nome, preco)
             )
         with p4:
             st.session_state["p14"] = "Produto generico 1" 
@@ -183,25 +159,14 @@ def AbrirHome():
                     image="assets/prod.png",
                     caption= st.session_state["p14"]
                 )
-            
-            #st.text_input(
-                #"",
-                #st.session_state["p14"] ,
-                #label_visibility="collapsed",
-                #disabled = True
-                #)
+
             st.metric("Preço", "R$ 30,00 ", "10%")
 
             st.button(
                 "Add Carrinho 🛒",            
-                #on_click = adicionarCarrinho(st.session_state["p14"],"R$ 30,00"),
-                
                 on_click = adicionarCarrinho,
                 args=(1),
-                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
                 key = 4
-                #kwargs={"nome":st.session_state["p14"], "preco":"R$ 30,00"},
-                #(nome, preco)
             )
         with p5:
             st.image(   
