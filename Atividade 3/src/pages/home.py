@@ -17,7 +17,12 @@ def percorrerCarrinho() :
     return st.session_state["a"].verCarrinho()
 
 def limparCarrinho():
-    
+    return st.session_state["a"].setCarrinho()
+    return st.session_state["a"].verCarrinho()
+
+
+
+
 
 
 
@@ -196,6 +201,11 @@ def AbrirHome():
         with compras:#lista de compras
             st.header("Carrinho🛒")
             st.write(percorrerCarrinho())
+            st.button(
+                "Limpar Carrinho 🛒",            
+                on_click = limparCarrinho
+            )
+
     with info:
         a,b = st.columns([3,1])
         with a:
