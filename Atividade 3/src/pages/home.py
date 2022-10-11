@@ -45,8 +45,8 @@ def AbrirHome():
         with p11:            
 
             st.image(   
-                    image="assets/prod.png",
-                    caption=st.session_state["a"].produtos[0].getNome()
+                    image=st.session_state["a"].produtos[0].getUrl() ,
+                    caption=st.session_state["a"].produtos[0].getNome()+"aaa"
                 )     
                 
             st.metric("Preço",st.session_state["a"].produtos[0].getPreco(), "12%")
@@ -60,7 +60,7 @@ def AbrirHome():
         with p12:
 
             st.image(   
-                    image="assets/prod.png",
+                    image=st.session_state["a"].produtos[1].getUrl() ,
                     caption= st.session_state["a"].produtos[1].getNome()
                 )     
                 
@@ -73,7 +73,7 @@ def AbrirHome():
             )
         with p13:
             st.image(   
-                    image="assets/prod.png",
+                    image=st.session_state["a"].produtos[2].getUrl() ,
                     caption=st.session_state["a"].produtos[2].getNome()
                 )     
                 
@@ -88,7 +88,7 @@ def AbrirHome():
         with p14:
 
             st.image(   
-                    image="assets/prod.png",
+                    image=st.session_state["a"].produtos[3].getUrl() ,
                     caption=st.session_state["a"].produtos[3].getNome()
                 )     
                 
@@ -110,7 +110,7 @@ def AbrirHome():
         p1,p2,p3,p4,p5 = st.columns([3,3,3,3,1])
         with p1:
             st.image(   
-                    image="assets/prod.png",
+                    image=st.session_state["a"].produtos[4].getUrl() ,
                     caption=st.session_state["a"].produtos[4].getNome()
                 )     
                 
@@ -123,7 +123,7 @@ def AbrirHome():
             )
         with p2:
             st.image(   
-                    image="assets/prod.png",
+                    image=st.session_state["a"].produtos[5].getUrl() ,
                     caption=st.session_state["a"].produtos[5].getNome()
                 )     
                 
@@ -135,9 +135,8 @@ def AbrirHome():
                 key=2
             )
         with p3:
-            preco_cel2 = "R$ 1500,00"
             st.image(   
-                    image="assets/prod.png",
+                    image=st.session_state["a"].produtos[6].getUrl() ,
                     caption=st.session_state["a"].produtos[6].getNome()
                 )     
                 
@@ -150,7 +149,7 @@ def AbrirHome():
             )
         with p4:
             st.image(   
-                    image="assets/prod.png",
+                    image=st.session_state["a"].produtos[7].getUrl() ,
                     caption= st.session_state["a"].produtos[7].getNome()
                 )
 
