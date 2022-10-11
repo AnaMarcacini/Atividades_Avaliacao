@@ -10,3 +10,6 @@ class Product():
 
     def getPreco(self):
         return self.price
+
+    def getNome(self):
+        return self.name
