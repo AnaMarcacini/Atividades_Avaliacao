@@ -24,7 +24,7 @@ class ProductController():
         except:
             a = Product("produto não existe ou esgotou",price="00000,000")
             self.carrinho.append(a)
-            
+
         print("tamanho carrinho")
         print(len(self.carrinho))
 
@@ -55,7 +55,7 @@ class ProductController():
             texto = texto + "\n \n \n " + p
         soma = self.somaCarrinho()
         soma = str(soma)
-        texto = texto + "\n \n \n  -------- \n " + soma
+        texto = texto + "\n \n \n  -------- \n R$ " + soma
         print("resultado final :::::: \n\n\n\n")
         print(texto)
         return texto
