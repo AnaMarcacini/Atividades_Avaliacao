@@ -9,7 +9,7 @@ class ProductController():
             Product("Produto 2", "R$ 110,00"),
             Product("Produto 3", "R$ 120,00"),
             Product("Produto 4", "R$ 130,00","assets/lechonk.jpg"),
-            Product("Produto 5", "R$ 140,00"),
+            Product("Produto 5", "R$ 140,00","essa/imagem/nao/existe"),
             Product("Produto 6", "R$ 150,00"),
             Product("Produto 7", "R$ 160,00"),
             Product("Produto 8", "R$ 170,00")

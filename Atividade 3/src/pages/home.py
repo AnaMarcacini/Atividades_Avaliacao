@@ -35,7 +35,7 @@ def AbrirHome():
     with main:
 
         st.title("Home")
-        
+
         imagensBanner = ["assets/B1.jpg","assets/B2.jpg"]
         st.image( #Banner  
                 image=imagensBanner,
@@ -44,12 +44,16 @@ def AbrirHome():
         st.header("Mais Vendidos")
         p11,p12,p13,p14,p15 = st.columns([3,3,3,3,1])
         with p11:            
-
-            st.image(   
-                    image=st.session_state["a"].produtos[0].getUrl() ,
-                    caption=st.session_state["a"].produtos[0].getNome()+"aaa"
-                )     
-                
+            try:
+                st.image(   
+                        image=st.session_state["a"].produtos[0].getUrl() ,
+                        caption=st.session_state["a"].produtos[0].getNome()
+                    )     
+            except:
+                st.image(   
+                    image = "assets/prod.png",
+                    caption=st.session_state["a"].produtos[0].getNome()+" aaa"
+                )  
             st.metric("Preço",st.session_state["a"].produtos[0].getPreco(), "12%")
             st.button(
                 "Add Carrinho 🛒",            
@@ -59,12 +63,17 @@ def AbrirHome():
             )
 
         with p12:
-
-            st.image(   
+            try:
+                st.image(   
                     image=st.session_state["a"].produtos[1].getUrl() ,
-                    caption= st.session_state["a"].produtos[1].getNome()+"teste"
-                )     
-                
+                    caption=st.session_state["a"].produtos[1].getNome()
+                )    
+            except:
+                st.image(   
+                    image = "assets/prod.png",
+                    caption=st.session_state["a"].produtos[1].getNome()+" aa"
+                )    
+
             st.metric("Preço", st.session_state["a"].produtos[1].getPreco(), "15%")
             st.button(
                 "Add Carrinho 🛒",            
@@ -73,11 +82,17 @@ def AbrirHome():
                 key= 1111
             )
         with p13:
-            st.image(   
+            try:
+                st.image(   
                     image=st.session_state["a"].produtos[2].getUrl() ,
                     caption=st.session_state["a"].produtos[2].getNome()
                 )     
-                
+            except:
+                st.image(   
+                    image = "assets/prod.png",
+                    caption=st.session_state["a"].produtos[2].getNome()+" aaa"
+                )    
+                    
             st.metric("Preço", st.session_state["a"].produtos[2].getPreco(),0)
             st.button(
                 "Add Carrinho 🛒",            
@@ -85,14 +100,18 @@ def AbrirHome():
                 kwargs={"indice":2},
                 key=12
             )
-
         with p14:
-
-            st.image(   
+            try:
+                st.image(   
                     image=st.session_state["a"].produtos[3].getUrl() ,
                     caption=st.session_state["a"].produtos[3].getNome()
                 )     
-                
+            except:
+                st.image(   
+                    image = "assets/prod.png",
+                    caption=st.session_state["a"].produtos[3].getNome()+" aaa"
+                )    
+                    
             st.metric("Preço",st.session_state["a"].produtos[3].getPreco() , "10%")
             st.button(
                 "Add Carrinho 🛒",            
@@ -100,7 +119,6 @@ def AbrirHome():
                 kwargs={"indice":3},
                 key=1
             )
-
         with p15:
             st.image(   
                     image="assets/setinha.png"
@@ -110,11 +128,16 @@ def AbrirHome():
         st.header("Produtos Relacionados")
         p1,p2,p3,p4,p5 = st.columns([3,3,3,3,1])
         with p1:
-            st.image(   
+            try:
+                st.image(   
                     image=st.session_state["a"].produtos[4].getUrl() ,
-                    caption=st.session_state["a"].produtos[4].getNome()
+                    caption=st.session_state["a"].produtos[4].getNome()+"endereço errado"
                 )     
-                
+            except:
+                st.image(   
+                    image = "assets/prod.png",
+                    caption=st.session_state["a"].produtos[4].getNome()+"endCorrigido"
+                )  
             st.metric("Preço", st.session_state["a"].produtos[4].getPreco() , "12%")
             st.button(
                 "Add Carrinho 🛒",            
@@ -123,11 +146,17 @@ def AbrirHome():
                 key=13
             )
         with p2:
-            st.image(   
+            try:
+                st.image(   
                     image=st.session_state["a"].produtos[5].getUrl() ,
                     caption=st.session_state["a"].produtos[5].getNome()
                 )     
-                
+            except:
+                st.image(   
+                    image = "assets/prod.png",
+                    caption=st.session_state["a"].produtos[5].getNome()+"aaa"
+                )    
+                    
             st.metric("Preço",st.session_state["a"].produtos[5].getPreco() , "15%")
             st.button(
                 "Add Carrinho 🛒",            
@@ -136,11 +165,16 @@ def AbrirHome():
                 key=2
             )
         with p3:
-            st.image(   
+            try:
+                st.image(   
                     image=st.session_state["a"].produtos[6].getUrl() ,
                     caption=st.session_state["a"].produtos[6].getNome()
                 )     
-                
+            except:
+                st.image(   
+                    image = "assets/prod.png",
+                    caption=st.session_state["a"].produtos[6].getNome()+"aaa"
+                )     
             st.metric("Preço", st.session_state["a"].produtos[6].getPreco(),0)
             st.button(
                 "Add Carrinho 🛒",            
@@ -149,11 +183,16 @@ def AbrirHome():
                 key = 3
             )
         with p4:
-            st.image(   
+            try:
+                st.image(   
                     image=st.session_state["a"].produtos[7].getUrl() ,
                     caption= st.session_state["a"].produtos[7].getNome()
                 )
-
+            except:
+                st.image(   
+                    image = "assets/prod.png",
+                    caption=st.session_state["a"].produtos[7].getNome()+"aaa"
+                ) 
             st.metric("Preço", st.session_state["a"].produtos[7].getPreco(), "10%")
 
             st.button(
