@@ -53,8 +53,6 @@ def AbrirHome():
                 on_click = adicionarCarrinho,
                 kwargs={"indice":1},
                 
-
-
             )
 
         with p12:
@@ -70,7 +68,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs=(1),
+                kwargs={"indice":2},
                 key= 1111
             )
         with p13:
@@ -85,7 +83,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                args=(1),
+                kwargs={"indice":3},
                 key=12
             )
 
@@ -101,7 +99,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                args=(0),
+                kwargs={"indice":4},
                 key=1
             )
 
@@ -124,7 +122,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                args=(2),
+                kwargs={"indice":0},
                 key=13
             )
         with p2:
@@ -140,7 +138,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                args=(6),
+                kwargs={"indice":5},
                 key=2
             )
         with p3:
@@ -154,7 +152,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                args=(1),
+                kwargs={"indice":6},
                 key = 3
             )
         with p4:
@@ -169,7 +167,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                args=(1),
+                kwargs={"indice":7},
                 key = 4
             )
         with p5:
