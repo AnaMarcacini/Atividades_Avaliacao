@@ -4,19 +4,19 @@ Ana Helena A. C. R. Marcacini
 """
 class Product():
     def __init__(self, name, price,url = "assets/prod.png") -> None:
-        self.name = name
-        self.price = price
+        self._name = name
+        self._price = price
         #self.url = url especifica futuro
-        self.url = url
+        self._url = url
     def __str__(self) -> str:
-        return f'{self.name} -- {self.price})'
+        return f'{self._name} -- {self._price})'
 
 
     def getPreco(self):
-        return self.price
+        return self._price
 
     def getNome(self):
-        return self.name
+        return self._name
         
     def getUrl(self):
-        return self.url
+        return self._url
