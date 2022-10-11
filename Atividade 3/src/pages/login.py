@@ -18,7 +18,9 @@ def AbrirLogin():
         )
         senha = st.text_input(
             "Digite a senha :",
-            placeholder = "Senha 🔒"
+            placeholder = "Senha 🔒",
+            type= "password"
+
         )
 
     def fui_apertado():
