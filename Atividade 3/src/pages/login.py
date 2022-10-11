@@ -33,6 +33,7 @@ def AbrirLogin():
             #print("usuario encontrado mas vc é uma anta")
         else:
             print("usuario não encontrado")
+            st.write("usuario não encontrado")
     st.button(
             label="🚪 Entrar 🔓",
             help="Entrar na loja",

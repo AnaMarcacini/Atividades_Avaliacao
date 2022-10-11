@@ -10,6 +10,8 @@ class UserController():
             User(name="tais", password="petacular", email="tais_@condida.com"),
             User(name="Ana", password="Ana", email="Ana"),
             User(name="a@gmail.com", password="a", email="a@gmail.com"),
+            User(name="a", password="a", email="a"),
+
             
         ]
     def checkUser(self,user):
