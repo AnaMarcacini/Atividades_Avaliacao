@@ -3,46 +3,51 @@ from itertools import product
 from numpy import true_divide
 import streamlit as st
 import models.product as p
-import controllers.product_controller as controladorProduto
+#import controllers.product_controller as controladorProduto
+
+from controllers.product_controller import ProductController
+
+
+
 ### Funções
-''' Carrinho em formato de string e texto sem o tipo carrinho
-def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
-    """
-    preco = preco[2::]
-    preco = preco.replace(',', '. ') 
-    preco = float(preco)
-    prod = Product(nome , preco)
-    print (prod)
+# Carrinho em formato de string e texto sem o tipo carrinho
+# def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
+#     """
+#     preco = preco[2::]
+#     preco = preco.replace(',', '. ') 
+#     preco = float(preco)
+#     prod = Product(nome , preco)
+#     print (prod)
     
-    st.session_state["carrinho"].append(prod)
-    """
-    st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
-    #percorrerCarrinho()
+#     st.session_state["carrinho"].append(prod)
+#     """
+#     st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
+#     #percorrerCarrinho()
 
-"""
-def percorrerCarrinho() :
-    texto = ""
-    for produto in st.session_state["carrinho"]:
-        print("Produto atual")
-        print(produto)
-        print("\n")
-        #st.write(produto)
-        texto = produto + "\n " + texto
-    return texto
-"""
-
-'''
+# def percorrerCarrinho() :
+#     texto = ""
+#     for produto in st.session_state["carrinho"]:
+#         print("Produto atual")
+#         #st.write(produto)
+#         texto = produto + "\n " + texto
+#     return texto
 
 
 
 def adicionarCarrinho(indice):
-    st.session_state["a"].carrinho.append(st.session_state["a"].produtos(indice))
-'''
-def adicionarCarrinho(nome, preco ):
-        b = p.Product(nome,preco)
-        st.session_state["a"].carrinho.append(b)
-        #controladorProduto.ProductController().carrinho.append
-'''
+    st.session_state["a"].addCarrinho(indice)
+#     c = st.session_state["a"].produtos[indice]
+#     st.session_state["a"].carrinho.append(c)
+    #st.session_state["a"].carrinho.append(st.session_state["a"].produtos[indice])
+
+
+
+# '''
+# def adicionarCarrinho(nome, preco ):
+#         b = p.Product(nome,preco)
+#         st.session_state["a"].carrinho.append(b)
+#         #controladorProduto.ProductController().carrinho.append
+# '''
 def percorrerCarrinho() :
     texto = ""
     for produto in st.session_state["a"].carrinho:
@@ -56,9 +61,11 @@ def percorrerCarrinho() :
 
 
 def AbrirHome():
+    st.session_state["a"] = ProductController()
+
 
     #st.session_state["carrinho"] = []
-    st.session_state["a"] = controladorProduto.ProductController()
+    #st.session_state["a"] = controladorProduto.ProductController()
 
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
     with main:
@@ -86,7 +93,9 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"indice":1},
+                #kwargs={"indice":1},
+                args=(1),
+
 
             )
 

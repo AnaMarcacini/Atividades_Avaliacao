@@ -17,6 +17,14 @@ class ProductController():
 
         self.carrinho = []
 
+    def addCarrinho(self,indice):
+        self.carrinho.append(self.produtos[indice])
+
+        #c = st.session_state["a"].produtos[indice]
+        #st.session_state["a"].carrinho.append(c)
+
+
+
     '''
     def checkUser(self,user):
         return user in self.users
