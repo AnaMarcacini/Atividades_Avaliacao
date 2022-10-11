@@ -1,6 +1,9 @@
 from models.user import User
 
-
+"""
+Ana Helena A. C. R. Marcacini
+        RA: 20.01305-0
+"""
 class UserController():
     def __init__(self) -> None:
         #Carrega os dados dos usuários

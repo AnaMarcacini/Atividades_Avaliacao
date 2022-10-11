@@ -6,7 +6,10 @@ import models.product as p
 #import controllers.product_controller as controladorProduto
 from controllers.product_controller import ProductController
 import pages.login as log
-
+"""
+Ana Helena A. C. R. Marcacini
+        RA: 20.01305-0
+"""
 
 def adicionarCarrinho(indice):
     indice = int(indice)

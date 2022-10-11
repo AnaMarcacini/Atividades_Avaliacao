@@ -1,3 +1,7 @@
+"""
+Ana Helena A. C. R. Marcacini
+        RA: 20.01305-0
+"""
 class Product():
     def __init__(self, name, price,url = "assets/prod.png") -> None:
         self.name = name
