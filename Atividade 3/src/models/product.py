@@ -13,3 +13,6 @@ class Product():
 
     def getNome(self):
         return self.name
+        
+    def getUrl(self):
+        return self.url
