@@ -18,18 +18,13 @@ def percorrerCarrinho() :
 
 def limparCarrinho():
     st.session_state["a"].setCarrinho()
-    #return st.session_state["a"].verCarrinho()
 
 
 
 
 def AbrirHome():
-   
-
     if "a" not in st.session_state:
         st.session_state["a"] = ProductController()
-
-
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
 
     with main:
@@ -40,7 +35,9 @@ def AbrirHome():
         st.image( #Banner  
                 image=imagensBanner,
             )
+
 ##PRODUTOS __________________________________________________________________________________
+
         st.header("Mais Vendidos")
         p11,p12,p13,p14,p15 = st.columns([3,3,3,3,1])
         with p11:            
@@ -62,7 +59,7 @@ def AbrirHome():
                 
             )
 
-        with p12:#produto fora de indice
+        with p12:
             try:
                 st.image(   
                     image=st.session_state["a"].produtos[1].getUrl() ,
@@ -78,7 +75,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"indice":11},
+                kwargs={"indice":1},
                 key= 1111
             )
         with p13:
@@ -182,11 +179,11 @@ def AbrirHome():
                 kwargs={"indice":6},
                 key = 3
             )
-        with p4:
+        with p4:#produto fora de indice
             try:
                 st.image(   
                     image=st.session_state["a"].produtos[7].getUrl() ,
-                    caption= st.session_state["a"].produtos[7].getNome()
+                    caption= st.session_state["a"].produtos[7].getNome()+"prodForaIndice Tratamento de erro"
                 )
             except:
                 st.image(   
@@ -198,7 +195,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"indice":7},
+                kwargs={"indice":11},
                 key = 4
             )
         with p5:
