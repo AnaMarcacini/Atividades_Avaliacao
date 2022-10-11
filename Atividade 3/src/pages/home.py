@@ -10,9 +10,7 @@ import pages.login as log
 
 def adicionarCarrinho(indice):
     indice = int(indice)
-
     st.session_state["a"].addCarrinho(indice)
-    #st.session_state["a"].carrinho.append(st.session_state["a"].produtos[indice])
 
 
 def percorrerCarrinho() :
