@@ -61,3 +61,5 @@ class ProductController():
 
         return texto
 
+    def setCarrinho(self):
+        se

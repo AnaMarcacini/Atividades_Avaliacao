@@ -16,6 +16,8 @@ def adicionarCarrinho(indice):
 def percorrerCarrinho() :
     return st.session_state["a"].verCarrinho()
 
+def limparCarrinho():
+    
 
 
 
