@@ -46,6 +46,7 @@ class ProductController():
             p = str(produto)
             texto = p + "\n " + texto
         soma = self.somaCarrinho()
+        soma = str(soma)
         texto = texto + "\n \n \n  -------- \n " + soma
 
         return texto

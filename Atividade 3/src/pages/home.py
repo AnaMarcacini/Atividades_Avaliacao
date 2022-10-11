@@ -174,7 +174,7 @@ def AbrirHome():
                 )
 
     with carrinho:
-        dadosCartao, compras = st.columns([3,1])
+        dadosCartao, compras = st.columns([8,3])
         with dadosCartao:#Dados da compra
             st.text_input("Titular: ")
             st.text_input("CPF ou CNPJ: ")
