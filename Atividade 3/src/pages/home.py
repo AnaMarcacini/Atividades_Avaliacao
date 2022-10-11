@@ -35,6 +35,7 @@ def AbrirHome():
     with main:
 
         st.title("Home")
+        
         imagensBanner = ["assets/B1.jpg","assets/B2.jpg"]
         st.image( #Banner  
                 image=imagensBanner,
@@ -61,7 +62,7 @@ def AbrirHome():
 
             st.image(   
                     image=st.session_state["a"].produtos[1].getUrl() ,
-                    caption= st.session_state["a"].produtos[1].getNome()
+                    caption= st.session_state["a"].produtos[1].getNome()+"teste"
                 )     
                 
             st.metric("Preço", st.session_state["a"].produtos[1].getPreco(), "15%")
