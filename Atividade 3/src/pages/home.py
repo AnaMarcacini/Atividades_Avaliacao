@@ -46,68 +46,61 @@ def AbrirHome():
 
         p11,p12,p13,p14,p15 = st.columns([3,3,3,3,1])
         
-        with p11:
-            fone = "fone de ouvido"
-            preco_fone = "R$ 50,00"
+        with p11:            
 
             st.image(   
                     image="assets/prod.png",
-                    caption=fone
+                    caption=st.session_state["a"].produtos[0].getNome()
                 )     
                 
-            st.metric("Preço",preco_fone, "12%")
+            st.metric("Preço",st.session_state["a"].produtos[0].getPreco(), "12%")
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"indice":1},
+                kwargs={"indice":0},
                 
             )
 
         with p12:
-            pc = "Computador"
-            preco_pc = "R$ 150,00 "
 
             st.image(   
                     image="assets/prod.png",
-                    caption= pc
+                    caption= st.session_state["a"].produtos[1].getNome()
                 )     
                 
-            st.metric("Preço", preco_pc, "15%")
+            st.metric("Preço", st.session_state["a"].produtos[1].getPreco(), "15%")
+            st.button(
+                "Add Carrinho 🛒",            
+                on_click = adicionarCarrinho,
+                kwargs={"indice":1},
+                key= 1111
+            )
+        with p13:
+            st.image(   
+                    image="assets/prod.png",
+                    caption=st.session_state["a"].produtos[2].getNome()
+                )     
+                
+            st.metric("Preço", st.session_state["a"].produtos[2].getPreco(),0)
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
                 kwargs={"indice":2},
-                key= 1111
-            )
-        with p13:
-            tablet = "Tablet"
-            preco_tablet = "R$ 90,00 "
-            st.image(   
-                    image="assets/prod.png",
-                    caption=tablet
-                )     
-                
-            st.metric("Preço", preco_tablet,0)
-            st.button(
-                "Add Carrinho 🛒",            
-                on_click = adicionarCarrinho,
-                kwargs={"indice":3},
                 key=12
             )
 
         with p14:
 
-            preco_fone2 = "R$ 30,00"
             st.image(   
                     image="assets/prod.png",
-                    caption=fone
+                    caption=st.session_state["a"].produtos[3].getNome()
                 )     
                 
-            st.metric("Preço",preco_fone2 , "10%")
+            st.metric("Preço",st.session_state["a"].produtos[3].getPreco() , "10%")
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"indice":4},
+                kwargs={"indice":3},
                 key=1
             )
 
@@ -120,29 +113,25 @@ def AbrirHome():
         st.header("Produtos Relacionados")
         p1,p2,p3,p4,p5 = st.columns([3,3,3,3,1])
         with p1:
-            preco_fone3 = "R$ 50,00"
             st.image(   
                     image="assets/prod.png",
-                    caption=fone
+                    caption=st.session_state["a"].produtos[4].getNome()
                 )     
                 
-            st.metric("Preço", preco_fone3 , "12%")
+            st.metric("Preço", st.session_state["a"].produtos[4].getPreco() , "12%")
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                kwargs={"indice":0},
+                kwargs={"indice":4},
                 key=13
             )
         with p2:
-            cel = "Celular"
-            preco_cel = "R$ 150,00"
-
             st.image(   
                     image="assets/prod.png",
-                    caption=cel
+                    caption=st.session_state["a"].produtos[5].getNome()
                 )     
                 
-            st.metric("Preço",preco_cel , "15%")
+            st.metric("Preço",st.session_state["a"].produtos[5].getPreco() , "15%")
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
@@ -153,10 +142,10 @@ def AbrirHome():
             preco_cel2 = "R$ 1500,00"
             st.image(   
                     image="assets/prod.png",
-                    caption=cel
+                    caption=st.session_state["a"].produtos[6].getNome()
                 )     
                 
-            st.metric("Preço", preco_cel2,0)
+            st.metric("Preço", st.session_state["a"].produtos[6].getPreco(),0)
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
@@ -164,13 +153,12 @@ def AbrirHome():
                 key = 3
             )
         with p4:
-            st.session_state["p14"] = "Produto generico 1" 
             st.image(   
                     image="assets/prod.png",
-                    caption= st.session_state["p14"]
+                    caption= st.session_state["a"].produtos[7].getNome()
                 )
 
-            st.metric("Preço", "R$ 30,00 ", "10%")
+            st.metric("Preço", st.session_state["a"].produtos[7].getPreco(), "10%")
 
             st.button(
                 "Add Carrinho 🛒",            
