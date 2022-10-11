@@ -10,34 +10,11 @@ from controllers.product_controller import ProductController
 
 
 ### Funções
-# Carrinho em formato de string e texto sem o tipo carrinho
-# def adicionarCarrinho(nome, preco):#futuramente um tipo carrinho
-#     """
-#     preco = preco[2::]
-#     preco = preco.replace(',', '. ') 
-#     preco = float(preco)
-#     prod = Product(nome , preco)
-#     print (prod)
-    
-#     st.session_state["carrinho"].append(prod)
-#     """
-#     st.session_state["carrinho"].append(f'Produto {nome} - {preco}')
-#     #percorrerCarrinho()
-
-# def percorrerCarrinho() :
-#     texto = ""
-#     for produto in st.session_state["carrinho"]:
-#         print("Produto atual")
-#         #st.write(produto)
-#         texto = produto + "\n " + texto
-#     return texto
 
 
 
 def adicionarCarrinho(indice):
     st.session_state["a"].addCarrinho(indice)
-#     c = st.session_state["a"].produtos[indice]
-#     st.session_state["a"].carrinho.append(c)
     #st.session_state["a"].carrinho.append(st.session_state["a"].produtos[indice])
 
 
@@ -48,18 +25,22 @@ def adicionarCarrinho(indice):
 #         st.session_state["a"].carrinho.append(b)
 #         #controladorProduto.ProductController().carrinho.append
 # '''
-def percorrerCarrinho() :
-    texto = ""
-    for produto in st.session_state["a"].getCarrinho():
-        print("Produto atual")
-        print(produto)
-        print("\n")
-        p = str(produto)
-        texto = p + "\n " + texto
-    soma = st.session_state["a"].somaCarrinho()
-    texto = texto + "\n \n \n  -------- \n " + soma
+# def percorrerCarrinho() :
+#     texto = ""
+#     for produto in st.session_state["a"].getCarrinho():
+#         print("Produto atual")
+#         print(produto)
+#         print("\n")
+#         p = str(produto)
+#         texto = p + "\n " + texto
+#     soma = st.session_state["a"].somaCarrinho()
+#     texto = texto + "\n \n \n  -------- \n " + soma
 
-    return texto
+#     return texto
+
+def percorrerCarrinho() :
+    return st.session_state["a"].verCarrinho()
+
 
 
 

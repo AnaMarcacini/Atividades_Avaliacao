@@ -28,20 +28,25 @@ class ProductController():
 
     def somaCarrinho(self):
         total = 0
-        for item in self.carrinho():
-            total = total+item.getPreco()
+        for item in self.carrinho:
+            preco = item.getPreco()
+            preco = preco[2::]
+            preco = preco.replace(',', '. ') 
+            preco = float(preco)
+            total = total+preco
         return total
 
 
+    def verCarrinho(self) :
+        texto = ""
+        for produto in self.carrinho:
+            print("Produto atual")
+            print(produto)
+            print("\n")
+            p = str(produto)
+            texto = p + "\n " + texto
+        soma = self.somaCarrinho()
+        texto = texto + "\n \n \n  -------- \n " + soma
 
-    '''
-    def checkUser(self,user):
-        return user in self.users
+        return texto
 
-    def checkLogin(self, name, password):
-        user_teste = User(name=name, password=password, email=None)
-        for user in self.users:
-            if user.name == user_teste.name and user.password == user_teste.password:
-                return True
-        return False
-'''
