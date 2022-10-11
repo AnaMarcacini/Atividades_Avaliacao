@@ -17,8 +17,8 @@ def percorrerCarrinho() :
     return st.session_state["a"].verCarrinho()
 
 def limparCarrinho():
-    return st.session_state["a"].setCarrinho()
-    return st.session_state["a"].verCarrinho()
+    st.session_state["a"].setCarrinho()
+    #return st.session_state["a"].verCarrinho()
 
 
 
