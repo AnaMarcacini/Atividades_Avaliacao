@@ -23,9 +23,6 @@ def limparCarrinho():
 
 
 
-
-
-
 def AbrirHome():
    
 
@@ -34,6 +31,7 @@ def AbrirHome():
 
 
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
+
     with main:
 
         st.title("Home")
@@ -41,11 +39,9 @@ def AbrirHome():
         st.image( #Banner  
                 image=imagensBanner,
             )
-        st.header("Mais Vendidos")
 ##PRODUTOS __________________________________________________________________________________
-
+        st.header("Mais Vendidos")
         p11,p12,p13,p14,p15 = st.columns([3,3,3,3,1])
-        
         with p11:            
 
             st.image(   
