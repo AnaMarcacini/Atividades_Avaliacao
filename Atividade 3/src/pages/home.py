@@ -5,10 +5,12 @@ import streamlit as st
 import models.product as p
 #import controllers.product_controller as controladorProduto
 from controllers.product_controller import ProductController
-
+import pages.login as log
 
 
 def adicionarCarrinho(indice):
+    indice = int(indice)
+
     st.session_state["a"].addCarrinho(indice)
     #st.session_state["a"].carrinho.append(st.session_state["a"].produtos[indice])
 
@@ -20,7 +22,11 @@ def percorrerCarrinho() :
 
 
 def AbrirHome():
-    st.session_state["a"] = ProductController()
+   
+
+    if "a" not in st.session_state:
+        st.session_state["a"] = ProductController()
+
 
     main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
     with main:
@@ -47,8 +53,8 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                #kwargs={"indice":1},
-                args=(1),
+                kwargs={"indice":1},
+                
 
 
             )
@@ -66,7 +72,7 @@ def AbrirHome():
             st.button(
                 "Add Carrinho 🛒",            
                 on_click = adicionarCarrinho,
-                args=(1),
+                kwargs=(1),
                 key= 1111
             )
         with p13:
@@ -192,6 +198,17 @@ def AbrirHome():
         with compras:#lista de compras
             st.header("Carrinho🛒")
             st.write(percorrerCarrinho())
+    with info:
+        a,b = st.columns([3,1])
+        with a:
+            st.write("Lorem ipsum dolor sit amet. Hic eligendi minus sit consequatur nihil ea similique nesciunt sed repellat quasi ex aperiam sint non nisi repellat. Vel tenetur repellendus aut vitae voluptatem aut dolorem tempora et iure inventore sit quibusdam iusto qui quaerat autem cum tenetur sequi. Et commodi minus et sint blanditiis non rerum earum.Est veniam totam ea praesentium dicta cum omnis quibusdam eos sint voluptatem. Aut eligendi incidunt ut reprehenderit asperiores ad provident dolore qui fugiat voluptatem et omnis quibusdam ut delectus voluptas nam totam voluptatem. In doloribus vitae aut maiores ")
+        with b:
+            st.image(
+                image="assets/P.png",
+
+            )
+    #with sair:
+        #log.AbrirLogin()
 
 
 #______________________________________________________________________________________________
