@@ -26,3 +26,16 @@ git add.
 git commit -m "Aula 15 - introdução"
 
 git push --set-upstream origin aula15
+
+
+
+
+
+
+
+
+
+
+
+
+(projeto-sqlite) C:\Users\muril\Desktop\projeto-sqlite>python ./tests/teste_controllers.py
