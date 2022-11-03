@@ -3,7 +3,7 @@ from src.models.user import User
 class UsuarioDao:
     #ItemDAO || Item id
     _instance = None
-
+#User(email=resultado[0], name=resultado[1], password=resultado[2])
     def __init__(self) -> None:
         self._connect()
 
@@ -26,7 +26,7 @@ class UsuarioDao:
         """)
         resultados = []
         for resultado in self.cursor.fetchall():
-            resultados.append(User(email=resultado[0], nome=resultado[1], senha=resultado[2]))
+            resultados.append(User(email=resultado[0], name=resultado[1], password=resultado[2]))
         self.cursor.close()
         return resultados
     
@@ -35,7 +35,7 @@ class UsuarioDao:
         self.cursor.execute("""
             INSERT INTO Usuario (email, nome, senha)
             VALUES(?,?,?);
-        """, (usuario.email, usuario.nome, usuario.password))########Talvez erro#########
+        """, (usuario.email, usuario.name, usuario.password))########Talvez erro#########
         self.conn.commit()
         self.cursor.close()
     
@@ -49,7 +49,7 @@ class UsuarioDao:
         usuario = None
         resultado = self.cursor.fetchone()
         if resultado != None:
-            usuario = User( email=resultado[0], nome=resultado[1], senha=resultado[2])
+            usuario = User( email=resultado[0], name=resultado[1], password=resultado[2])
         self.cursor.close()
         return usuario
     
@@ -58,8 +58,8 @@ class UsuarioDao:
             self.cursor = self.conn.cursor()
             self.cursor.execute(f"""
                 UPDATE Usuario SET
-                nome = '{usuario.nome}',
-                senha = {usuario.senha}
+                nome = '{usuario.name}',
+                senha = {usuario.password}
                 WHERE email = '{usuario.email}'
             """)
             self.conn.commit()

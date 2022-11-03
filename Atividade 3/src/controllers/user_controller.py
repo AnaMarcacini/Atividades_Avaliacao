@@ -17,14 +17,29 @@ class UserController():
             
         ]
 
-
+    def getALL(self):#usar nas funções check user e login
+        return UsuarioDao.get_instance().get_all()
     
     def checkUser(self,user):
-        return user in self.users
+        return user in UsuarioDao.get_instance().get_all()
 
     def checkLogin(self, name, password):
         user_teste = User(name=name, password=password, email=None)
-        for user in self.users:
+        for user in UsuarioDao.get_instance().get_all():
             if user.name == user_teste.name and user.password == user_teste.password:
                 return True
         return False
+
+    def inserirUsuario(self,usuario):
+        return UsuarioDao.get_instance().inserir_usuario(usuario)
+    def pegarUsuario(self, email):
+        return UsuarioDao.get_instance().pegar_usuario(email)
+    def atualizarUsuario(self, usuario):
+        return UsuarioDao.get_instance().atualizar_Usuario(usuario)
+    def deletarUsuario(self,email):
+        return UsuarioDao.deletar_usuario(email)
+
+
+
+
+    
