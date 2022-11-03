@@ -7,6 +7,7 @@ import pages.login as log
 """
 Ana Helena A. C. R. Marcacini
         RA: 20.01305-0
+        atualiza a pag ao carregar para carregar corretamente
 """
 global pagina
 
