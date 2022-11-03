@@ -33,10 +33,7 @@ def AbrirLogin():
         print (user1)
         if (verificar.UserController().checkLogin(usuario,senha)):
             home.AbrirHome()
-            #st.session_state["pagina"] == "Home"
-            #pagina = "Home"
-            #a = "Home"
-            #print("usuario encontrado mas vc é uma anta")
+            
         else:
             print("usuario não encontrado")
             st.write("usuario não encontrado")
