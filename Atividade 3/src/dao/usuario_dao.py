@@ -1,7 +1,7 @@
 import sqlite3
 from src.models.user import User
 class UsuarioDao:
-    #ItemDAO || Item
+    #ItemDAO || Item id
     _instance = None
 
     def __init__(self) -> None:
@@ -13,7 +13,7 @@ class UsuarioDao:
             cls._instance = UsuarioDao()
         return cls._instance
 
-    def _connect(self):
+    def _connect(self):#ok
         try:
             self.conn = sqlite3.connect('./databases/sqlite.db')
         except:
@@ -26,30 +26,30 @@ class UsuarioDao:
         """)
         resultados = []
         for resultado in self.cursor.fetchall():
-            resultados.append(User(id=resultado[0], nome=resultado[1], email=resultado[2], senha=resultado[3]))
+            resultados.append(User(email=resultado[0], nome=resultado[1], senha=resultado[2]))
         self.cursor.close()
         return resultados
     
     def inserir_usuario(self, usuario):
         self.cursor = self.conn.cursor()
         self.cursor.execute("""
-            INSERT INTO Usuario (id, nome, email, senha)
+            INSERT INTO Usuario (email, nome, senha)
             VALUES(?,?,?);
-        """, (usuario.id, usuario.nome,usuario.email, usuario.password))########Talvez erro#########
+        """, (usuario.email, usuario.nome, usuario.password))########Talvez erro#########
         self.conn.commit()
         self.cursor.close()
     
     
-    def pegar_usuario(self, id):#ok
+    def pegar_usuario(self, email):#ok
         self.cursor = self.conn.cursor()
         self.cursor.execute(f"""
             SELECT * FROM Usuario
-            WHERE id = '{id}';
+            WHERE email = '{email}';
         """)
         usuario = None
         resultado = self.cursor.fetchone()
         if resultado != None:
-            usuario = User(id=resultado[0], nome=resultado[1], email=resultado[2], senha=resultado[3])
+            usuario = User( email=resultado[0], nome=resultado[1], senha=resultado[2])
         self.cursor.close()
         return usuario
     
@@ -59,9 +59,8 @@ class UsuarioDao:
             self.cursor.execute(f"""
                 UPDATE Usuario SET
                 nome = '{usuario.nome}',
-                email = '{usuario.email}',
                 senha = {usuario.senha}
-                WHERE id = '{usuario.id}'
+                WHERE email = '{usuario.email}'
             """)
             self.conn.commit()
             self.cursor.close()
@@ -69,12 +68,12 @@ class UsuarioDao:
             return False
         return True
     
-    def deletar_usuario(self, id):#ok
+    def deletar_usuario(self, email):#ok
         try:
             self.cursor = self.conn.cursor()
             self.cursor.execute(f"""
                 DELETE FROM Usuario 
-                WHERE id = '{id}'
+                WHERE email = '{email}'
             """)
             self.conn.commit()
             self.cursor.close()
