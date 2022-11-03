@@ -16,6 +16,9 @@ class UserController():
             User(name="a", password="a", email="a"),
             
         ]
+
+
+    
     def checkUser(self,user):
         return user in self.users
 

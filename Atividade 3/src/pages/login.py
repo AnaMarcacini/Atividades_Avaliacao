@@ -5,6 +5,7 @@ import webbrowser
 import pages.home as home
 import controllers.user_controller as verificar
 from models.user import User
+import pages.criar_conta as novaConta
 """
 Ana Helena A. C. R. Marcacini
         RA: 20.01305-0
@@ -44,6 +45,14 @@ def AbrirLogin():
             help="Entrar na loja",
             on_click=fui_apertado,
     )
+    def CriarConta():
+        novaConta.AbrirCriacaoConta()
+    st.button(
+            label="Criar Conta🎇",
+            help="Entrar na loja",
+            on_click=CriarConta,
+    )
+
     with col2:
         st.image(   
             image="assets/perfilb.png",
