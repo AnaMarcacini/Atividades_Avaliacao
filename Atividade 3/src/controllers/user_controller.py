@@ -1,5 +1,5 @@
 from models.user import User
-
+from dao.usuario_dao import UsuarioDao
 """
 Ana Helena A. C. R. Marcacini
         RA: 20.01305-0
