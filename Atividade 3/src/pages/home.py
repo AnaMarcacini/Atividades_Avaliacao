@@ -6,6 +6,8 @@ import models.product as p
 #import controllers.product_controller as controladorProduto
 from controllers.product_controller import ProductController
 import pages.login as log
+from models.user import User
+from controllers.user_controller import UserController
 """
 Ana Helena A. C. R. Marcacini
         RA: 20.01305-0
@@ -28,7 +30,7 @@ def limparCarrinho():
 def AbrirHome():
     if "a" not in st.session_state:
         st.session_state["a"] = ProductController()
-    main, info, carrinho,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sair"])
+    main, info, carrinho,conta,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sua Conta 🙍‍♂️","Sair"])
 
     with main:
 
@@ -230,6 +232,75 @@ def AbrirHome():
                 "Limpar Carrinho 🛒",            
                 on_click = limparCarrinho
             )
+    with conta:
+        st.title("Verificando se é você,")
+        st.write( "faça o login novamente")
+        email = st.text_input(
+            "Digite o seu email :",
+            placeholder = "email 💌"
+        )
+        usuario = st.text_input(
+            "Digite o seu nome de Usuário :",
+            placeholder = "Usuário 🙍‍♂️"
+        )        
+        senha = st.text_input(
+            "Digite a sua senha :",
+            placeholder = "Senha 🔒",
+            type= "password"
+        )
+
+        def fui_apertado():
+            print("Chamar validador de senhas")
+            user1 = User(usuario, usuario, senha)
+            print (user1)
+            if (UserController().checkLogin(usuario,senha)):
+                st.title("Acesso concedido. Altere seu nome de usuario ou senha")
+#                email = st.text_input(
+#                    "Digite o seu email :",
+#                    placeholder = "email 💌"
+#                )
+                usuario = st.text_input(
+                    "Digite o seu novo nome de Usuário :",
+                    placeholder = "Usuário 🙍‍♂️"
+                )        
+                senha = st.text_input(
+                    "Digite a sua nova senha :",
+                    placeholder = "Senha 🔒",
+                    type= "password"
+                )
+            else:
+                print("usuario não encontrado")
+                st.write("usuario não encontrado")
+
+        st.button(
+                label="🚪 Entrar 🔓",
+                help="Entrar na loja",
+                on_click=fui_apertado,
+    )
+        def apagar():
+            #if (senha == "1"):
+                    st.title("Acesso concedido. Altere seu nome de usuario ou senha")
+    #                email = st.text_input(
+    #                    "Digite o seu email :",
+    #                    placeholder = "email 💌"
+    #                )
+                    usuario = st.text_input(
+                        "Digite o seu novo nome de Usuário :",
+                        placeholder = "Usuário 🙍‍♂️"
+                    )        
+                    senha = st.text_input(
+                        "Digite a sua nova senha :",
+                        placeholder = "Senha 🔒",
+                        type= "password"
+                    )
+            
+
+#        st.button(
+#                    label="🚪 teste 🔓",
+#                    help="Entrar na loja",
+#                    on_click=apagar,
+#        )
+
 
     with info:
         a,b = st.columns([3,1])
