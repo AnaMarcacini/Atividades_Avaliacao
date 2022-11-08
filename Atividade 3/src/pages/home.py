@@ -30,7 +30,7 @@ def limparCarrinho():
 def AbrirHome():
     if "a" not in st.session_state:
         st.session_state["a"] = ProductController()
-    main, info, carrinho,conta,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sua Conta 🙍‍♂️","Sair"])
+    main, info, carrinho,conta,novosProdutos,sair = st.tabs(["Home", "Info", "Carrinho 🛒","Sua Conta 🙍‍♂️","Novos Produtos","Sair"])
 
     with main:
 
@@ -300,6 +300,26 @@ def AbrirHome():
 #                    help="Entrar na loja",
 #                    on_click=apagar,
 #        )
+
+
+    with novosProdutos:
+        st.title("Criando um Produto")
+        nomeProduto = st.text_input(
+            "Nome do produto :",
+            placeholder = "Nome"
+        )
+        preco = st.text_input(
+            "Digite o Preço do produto :",
+            placeholder = "Preço"
+        )        
+        descricao = st.text_input(
+            "Digite uma descrição (opcional) :",
+            placeholder = "Descrição (opcional)",
+        )
+        imagem = st.text_input(
+            "Digite o endereço da imagem (opcional) :",
+            placeholder = "Imagem (opcional)",
+        )
 
 
     with info:
