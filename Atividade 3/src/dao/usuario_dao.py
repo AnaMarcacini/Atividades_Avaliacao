@@ -1,3 +1,4 @@
+from operator import truediv
 import sqlite3
 from src.models.user import User
 class UsuarioDao:
@@ -31,14 +32,17 @@ class UsuarioDao:
         return resultados
     
     def inserir_usuario(self, usuario):
-        self.cursor = self.conn.cursor()
-        self.cursor.execute("""
-            INSERT INTO Usuario (email, nome, senha)
-            VALUES(?,?,?);
-        """, (usuario.email, usuario.name, usuario.password))########Talvez erro#########
-        self.conn.commit()
-        self.cursor.close()
-    
+        try:
+            self.cursor = self.conn.cursor()
+            self.cursor.execute("""
+                INSERT INTO Usuario (email, nome, senha)
+                VALUES(?,?,?);
+            """, (usuario.email, usuario.name, usuario.password))########Talvez erro#########
+            self.conn.commit()
+            self.cursor.close()
+            return True
+        except:
+            return False
     
     def pegar_usuario(self, email):#ok
         self.cursor = self.conn.cursor()

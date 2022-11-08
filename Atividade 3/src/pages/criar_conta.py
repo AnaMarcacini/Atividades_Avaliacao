@@ -28,11 +28,11 @@ def AbrirCriacaoConta():
 
         )
 
-    def fui_apertado():
+    def criarConta():
         print("Chamar validador de senhas")
         user1 = User(usuario, email, senha)
         print (user1)
-        if (UserController.novoUsuario):
+        if (UserController.inserirUsuario(user1)):
             print('usuario criado com sucesso')
         else:
             print("Erro na criação do usuario")
@@ -41,7 +41,7 @@ def AbrirCriacaoConta():
     st.button(
             label="Criar conta ",
             help="Entrar na loja",
-            on_click=fui_apertado
+            on_click=criarConta
     )
     
     with col2:

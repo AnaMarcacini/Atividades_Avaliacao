@@ -40,7 +40,9 @@ git push --set-upstream origin aula15
 
 (projeto-sqlite) C:\Users\muril\Desktop\projeto-sqlite>python ./tests/teste_controllers.py
 
-
+C:\Users\ahmar\OneDrive\Documentos\Github\Atividades_Avaliacao\Atividade 3>python ./tests/teste_controllers.py
+python: can't open file 'C:\Users\ahmar\OneDrive\Documentos\Github\Atividades_Avaliacao\Atividade 3\tests\teste_controllers.py': [Errno 2] No such file 
+or directory
 
 
 
