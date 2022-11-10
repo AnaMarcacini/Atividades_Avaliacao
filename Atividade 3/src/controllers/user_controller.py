@@ -32,7 +32,6 @@ class UserController():
         return False
 
     def inserirUsuario(usuario):
-        print("ERRO NESSA FUNÇAÕ")
         return UsuarioDao.get_instance().inserir_usuario(usuario)
     def pegarUsuario(self, email):
         return UsuarioDao.get_instance().pegar_usuario(email)

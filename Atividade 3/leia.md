@@ -27,6 +27,9 @@ git commit -m "Aula 15 - introdução"
 
 git push --set-upstream origin aula15
 
+Atividade 3) C:\Users\ahmar\OneDrive\Documentos\Github\Atividades_Avaliacao\Atividade 3>python -m src.tests.teste_user_dao.py
+
+(Atividade 3) C:\Users\ahmar\OneDrive\Documentos\Github\Atividades_Avaliacao\Atividade 3>python -m streamlit run ./src/main.py 
 
 
 
