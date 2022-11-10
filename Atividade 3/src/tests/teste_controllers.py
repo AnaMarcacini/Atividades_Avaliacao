@@ -1,23 +1,36 @@
-from src.controllers.item_controller import ItemController
-from src.models.item import Item
+from src.controllers.product_controller import ProductController
 
-controller = ItemController()
-items = controller.pegar_todos_itens()
+from src.controllers.product_controller import Product
+
+
+
+controller = ProductController()
+items = controller.getALL
 for item in items:
     print(item)
 
-novo_item = Item("OLA1", "Cooler REDRAGON Vermelho", 19.90)
+novo_item = Product("TESTESSSSS", "TESSSSSTE", 19.90)
 print(controller.inserir_item(novo_item))
 
 print("**************************************")
-items = controller.pegar_todos_itens()
+items = controller.getALL
 for item in items:
     print(item)
 
 print("**************************************")
+"""
 item = controller.pegar_item("CAF6")
 print(item)
 
 print("*************************")
 items = controller.buscar_todos_itens_nome("Aula")
 print(items)
+
+"""
+
+
+
+
+#from src.models.product import Product
+#from models.product import Product
+#from src.models.product import Product

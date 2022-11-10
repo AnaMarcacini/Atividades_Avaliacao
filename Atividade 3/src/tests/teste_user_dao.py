@@ -4,7 +4,7 @@ from src.models.user import User
 
 
 ##Ver todos os usuarios
-
+print("OIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
 usuarios = UsuarioDao.get_instance().get_all()
 
 for usuario in usuarios:
