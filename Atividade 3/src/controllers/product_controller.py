@@ -8,14 +8,14 @@ class ProductController():
     def __init__(self) -> None:
         #Carrega os dados dos usuários
         self.produtos = [#estoque
-            Product("Produto 1", "R$ 100,00"),
-            Product("Produto 2", "R$ 110,00"),
-            Product("Produto 3", "R$ 120,00"),
-            Product("Produto 4", "R$ 130,00","assets/lechonk.jpg"),
-            Product("Produto 5", "R$ 140,00","essa/imagem/nao/existe"),
-            Product("Produto 6", "R$ 150,00"),
-            Product("Produto 7", "R$ 160,00"),
-            Product("Produto 8", "R$ 170,00")
+            Product(1,"Produto 1", "R$ 100,00"),
+            Product(2,"Produto 2", "R$ 110,00"),
+            Product(3,"Produto 3", "R$ 120,00"),
+            Product(4,"Produto 4", "R$ 130,00","assets/lechonk.jpg"),
+            Product(5,"Produto 5", "R$ 140,00","essa/imagem/nao/existe"),
+            Product(6,"Produto 6", "R$ 150,00"),
+            Product(7,"Produto 7", "R$ 160,00"),
+            Product(8,"Produto 8", "R$ 170,00")
         ]
 
         self.carrinho = []

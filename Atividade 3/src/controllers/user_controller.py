@@ -24,6 +24,7 @@ class UserController():
         return user in UsuarioDao.get_instance().get_all()
 
     def checkLogin(self, name, password):
+        print("estou aqui")
         user_teste = User(name=name, password=password, email=None)
         for user in UsuarioDao.get_instance().get_all():
             if user.name == user_teste.name and user.password == user_teste.password:

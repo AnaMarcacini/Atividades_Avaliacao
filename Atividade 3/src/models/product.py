@@ -3,7 +3,6 @@ Ana Helena A. C. R. Marcacini
         RA: 20.01305-0
 """
 from typing_extensions import Self
-from src.dao.item_dao import ProdutoDAO
 
 class Product():
     def __init__(self, id, name, price,url = "assets/prod.png", descricao = "") -> None:

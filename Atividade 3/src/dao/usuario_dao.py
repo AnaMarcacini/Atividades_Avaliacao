@@ -16,7 +16,7 @@ class UsuarioDao:
 
     def _connect(self):#ok
         try:
-            self.conn = sqlite3.connect('./databases/sqlite.db')
+            self.conn = sqlite3.connect('./databases/sqlite.db', check_same_thread=False)
         except:
             print("Erro, possivel endereço incorreto da base de dados")
 
