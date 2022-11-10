@@ -334,7 +334,7 @@ def AbrirHome():
                 st.write("produto add com suscesso")
                 print("PROD ADD SUCESSO")
             else:
-                st.write("ERRROOOOOOOOOOOO, ID REPITIDO ")
+                st.write("ERRROOOOOOOOOOOO, ID REPETIDO ")
                 st.write("prof nn sei o que acontece mas sempre que vc clica em salvar produto ele vai duas vezes e dá id repetido, porém ele add o produto o que pode ser observado em testes")
                 print("erro")
         st.button(
