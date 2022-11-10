@@ -330,7 +330,7 @@ def AbrirHome():
             placeholder = "Imagem (opcional)",
         )
         def inserirProduto(nomeProduto,preco,descricao,imagem):
-            ProductController.inserirItem(nomeProduto,preco,imagem,descricao)
+            st.session_state["a"].inserirItem(nomeProduto,preco,imagem,descricao)
         st.button(
             label="Inserir",
             help="Entrar na loja",

@@ -1,5 +1,4 @@
 
-
 import streamlit as st
 from models.user import User
 from controllers.user_controller import UserController
@@ -12,14 +11,8 @@ from controllers.product_controller import ProductController
 
 def testes():
     st.title("TODAS AS CONTAS")
-    
 
     def criarConta():
-        #st.write((UserController.getALL()))
-        #print((UserController.getALL()))
-    
-
-
         items = UserController.getALL()
         for item in items:
             print(item)
@@ -39,8 +32,9 @@ def testes():
             label="ver Produtos ",
             on_click=Produtos
     )
-    
 
+
+    
 
 
 testes()

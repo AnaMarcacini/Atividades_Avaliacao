@@ -75,11 +75,15 @@ class ProductController():
 
     def setCarrinho(self):
         self.carrinho = []
-    def inserirItem(nome,preco,url = "assets/prod.png", descricao = ""):
+    def inserirItem(self,nome, preco,url,descricao):
+        #string[início:parada:passo]
         item = Product(
-            id = 0,
+            id = nome[:3:]+nome[len(nome)-3::],
             name = nome,
             price = preco,
             url = url,
             descricao=descricao)
+        print("_"*100)
+        print(item)
+        print(f"""{item.id}    '{item._price} '     {item._name}""")
         return ProdutoDAO.get_instance().inserir_item(item)

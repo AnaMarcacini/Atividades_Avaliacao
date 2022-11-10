@@ -2,21 +2,16 @@ from email.mime import image
 import sqlite3
 from src.models.product import Product
 class ProdutoDAO:
-    
     _instance = None
-
     def __init__(self) -> None:
         self._connect()
-
     @classmethod
     def get_instance(cls):#ok
         if cls._instance == None:
             cls._instance = ProdutoDAO()
         return cls._instance
-
     def _connect(self):#ok
         self.conn = sqlite3.connect('./databases/sqlite.db',check_same_thread=False)
-
     def get_all(self):#ok
         self.cursor = self.conn.cursor()
         self.cursor.execute("""
@@ -27,12 +22,13 @@ class ProdutoDAO:
             resultados.append(Product(id=resultado[0], name=resultado[1], price=resultado[2], descricao = resultado[3], url= resultado[4]))
         self.cursor.close()
         return resultados
-    
     def inserir_item(self, item):#ok    falta retornar falso ou true
         self.cursor = self.conn.cursor()
+        print("oi")
+        print("*"*1000)
         self.cursor.execute("""
             INSERT INTO Itens (id, nome, preco, descricao,imagem)
-            VALUES(?,?,?);
+            VALUES(?,?,?,?,?);
         """, (item.id, item._name, item._price,item._url,item.descricao))
         self.conn.commit()
         self.cursor.close()
