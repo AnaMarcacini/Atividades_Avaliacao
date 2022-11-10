@@ -235,10 +235,6 @@ def AbrirHome():
     with conta:
         st.title("Verificando se é você,")
         st.write( "faça o login novamente")
-        email = st.text_input(
-            "Digite o seu email :",
-            placeholder = "email 💌"
-        )
         usuario = st.text_input(
             "Digite o seu nome de Usuário :",
             placeholder = "Usuário 🙍‍♂️"
