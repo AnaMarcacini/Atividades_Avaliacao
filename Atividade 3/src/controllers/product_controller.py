@@ -1,13 +1,20 @@
 from models.product import Product
-
+from dao.item_dao import ProdutoDAO
 """
 Ana Helena A. C. R. Marcacini
         RA: 20.01305-0
 """
 class ProductController():
+
+
+
     def __init__(self) -> None:
         #Carrega os dados dos usuários
-        self.produtos = [#estoque
+        self.produtos = ProdutoDAO.get_instance().get_all()
+        self.carrinho = []
+
+
+        self.produtosANTIGO = [#estoque
             Product(1,"Produto 1", "R$ 100,00"),
             Product(2,"Produto 2", "R$ 110,00"),
             Product(3,"Produto 3", "R$ 120,00"),
@@ -18,7 +25,12 @@ class ProductController():
             Product(8,"Produto 8", "R$ 170,00")
         ]
 
-        self.carrinho = []
+
+
+
+
+    def getALL():
+        return ProdutoDAO.get_instance().get_all()
 
     def addCarrinho(self,indicee):
         indicee = int(indicee)
@@ -39,8 +51,8 @@ class ProductController():
         total = 0
         for item in self.carrinho:
             preco = item.getPreco()
-            preco = preco[2::]
-            preco = preco.replace(',', '.') 
+#            preco = preco[2::]
+#            preco = preco.replace(',', '.') 
             preco = float(preco)
             total = total+preco
         return total
@@ -63,3 +75,11 @@ class ProductController():
 
     def setCarrinho(self):
         self.carrinho = []
+    def inserirItem(nome,preco,url = "assets/prod.png", descricao = ""):
+        item = Product(
+            id = 0,
+            name = nome,
+            price = preco,
+            url = url,
+            descricao=descricao)
+        return ProdutoDAO.get_instance().inserir_item(item)

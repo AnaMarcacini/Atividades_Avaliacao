@@ -134,7 +134,7 @@ def AbrirHome():
             try:
                 st.image(   
                     image=st.session_state["a"].produtos[4].getUrl() ,
-                    caption=st.session_state["a"].produtos[4].getNome()+"endereço errado"
+                    caption=st.session_state["a"].produtos[4].getNome()
                 )     
             except:
                 st.image(   
@@ -329,7 +329,14 @@ def AbrirHome():
             "Digite o endereço da imagem (opcional) :",
             placeholder = "Imagem (opcional)",
         )
-
+        def inserirProduto(nomeProduto,preco,descricao,imagem):
+            ProductController.inserirItem(nomeProduto,preco,imagem,descricao)
+        st.button(
+            label="Inserir",
+            help="Entrar na loja",
+            on_click=inserirProduto,
+            kwargs={"nomeProduto":nomeProduto,"preco":preco, "descricao": descricao,"imagem":imagem},
+        )
 
     with info:
         a,b = st.columns([3,1])

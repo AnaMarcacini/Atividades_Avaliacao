@@ -12,7 +12,7 @@ class Product():
         self._url = url
         self.descricao = descricao
     def __str__(self) -> str:
-        return f'{self._name} -- {self._price})'
+        return f'{self._name} -- {self._price}'
 
 
     def getPreco(self):

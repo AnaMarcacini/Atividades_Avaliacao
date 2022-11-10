@@ -15,7 +15,7 @@ class ProdutoDAO:
         return cls._instance
 
     def _connect(self):#ok
-        self.conn = sqlite3.connect('./databases/sqlite.db')
+        self.conn = sqlite3.connect('./databases/sqlite.db',check_same_thread=False)
 
     def get_all(self):#ok
         self.cursor = self.conn.cursor()
@@ -33,7 +33,7 @@ class ProdutoDAO:
         self.cursor.execute("""
             INSERT INTO Itens (id, nome, preco, descricao,imagem)
             VALUES(?,?,?);
-        """, (item.id, item.name, item.price,item.url,item.descricao))
+        """, (item.id, item._name, item._price,item._url,item.descricao))
         self.conn.commit()
         self.cursor.close()
     
