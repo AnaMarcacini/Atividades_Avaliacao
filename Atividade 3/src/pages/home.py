@@ -330,7 +330,12 @@ def AbrirHome():
             placeholder = "Imagem (opcional)",
         )
         def inserirProduto(nomeProduto,preco,descricao,imagem):
-            st.session_state["a"].inserirItem(nomeProduto,preco,imagem,descricao)
+            if(st.session_state["a"].inserirItem(nomeProduto,preco,imagem,descricao)):
+                st.write("produto add com suscesso")
+                print("PROD ADD SUCESSO")
+            else:
+                st.write("ERRROOOOOOOOOOOO")
+                print("erro")
         st.button(
             label="Inserir",
             help="Entrar na loja",

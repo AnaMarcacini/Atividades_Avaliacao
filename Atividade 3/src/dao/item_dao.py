@@ -23,16 +23,20 @@ class ProdutoDAO:
         self.cursor.close()
         return resultados
     def inserir_item(self, item):#ok    falta retornar falso ou true
-        self.cursor = self.conn.cursor()
-        print("oi")
-        print("*"*1000)
-        self.cursor.execute("""
-            INSERT INTO Itens (id, nome, preco, descricao,imagem)
-            VALUES(?,?,?,?,?);
-        """, (item.id, item._name, item._price,item._url,item.descricao))
-        self.conn.commit()
-        self.cursor.close()
-    
+        try:
+            self.cursor = self.conn.cursor()
+            print("oi")
+            print("*"*1000)
+            self.cursor.execute("""
+                INSERT INTO Itens (id, nome, preco, descricao,imagem)
+                VALUES(?,?,?,?,?);
+            """, (item.id, item._name, item._price,item._url,item.descricao))
+            self.conn.commit()
+            self.cursor.close()
+            return True
+        except:
+            print("Erro ou item já existe")
+            return False
     def pegar_item(self, id):#ok
         self.cursor = self.conn.cursor()
         self.cursor.execute(f"""
