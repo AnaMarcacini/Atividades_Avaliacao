@@ -1,6 +1,7 @@
+from email.mime import image
 import sqlite3
-from src.models.item import Item
-class ItemDAO:
+from src.models.product import Product
+class ProdutoDAO:
     
     _instance = None
 
@@ -8,34 +9,35 @@ class ItemDAO:
         self._connect()
 
     @classmethod
-    def get_instance(cls):
+    def get_instance(cls):#ok
         if cls._instance == None:
-            cls._instance = ItemDAO()
+            cls._instance = ProdutoDAO()
         return cls._instance
 
-    def _connect(self):
+    def _connect(self):#ok
         self.conn = sqlite3.connect('./databases/sqlite.db')
 
-    def get_all(self):
+    def get_all(self):#ok
         self.cursor = self.conn.cursor()
         self.cursor.execute("""
             SELECT * FROM Itens;
         """)
         resultados = []
         for resultado in self.cursor.fetchall():
-            resultados.append(Item(id=resultado[0], nome=resultado[1], preco=resultado[2]))
+            resultados.append(Product(id=resultado[0], name=resultado[1], price=resultado[2], descricao = resultado[3], url= resultado[4]))
         self.cursor.close()
         return resultados
     
-    def inserir_item(self, item):
+    def inserir_item(self, item):#ok    falta retornar falso ou true
         self.cursor = self.conn.cursor()
         self.cursor.execute("""
-            INSERT INTO Itens (id, nome, preco)
+            INSERT INTO Itens (id, nome, preco, descricao,imagem)
             VALUES(?,?,?);
-        """, (item.id, item.nome, item.preco))
+        """, (item.id, item.name, item.price,item.url,item.descricao))
         self.conn.commit()
         self.cursor.close()
-    def pegar_item(self, id):
+    
+    def pegar_item(self, id):#ok
         self.cursor = self.conn.cursor()
         self.cursor.execute(f"""
             SELECT * FROM Itens
@@ -44,7 +46,7 @@ class ItemDAO:
         item = None
         resultado = self.cursor.fetchone()
         if resultado != None:
-            item = Item(id=resultado[0], nome=resultado[1], preco=resultado[2])
+            item = Product(id=resultado[0], name=resultado[1], price=resultado[2], descricao = resultado[3], url= resultado[4])
         self.cursor.close()
         return item
     
@@ -53,8 +55,10 @@ class ItemDAO:
             self.cursor = self.conn.cursor()
             self.cursor.execute(f"""
                 UPDATE Itens SET
-                nome = '{item.nome}',
-                preco = {item.preco}
+                nome = '{item.name}',
+                preco = {item.price},
+                descricao = '{item.descricao}'
+                imagem = '{item.imagem}'
                 WHERE id = '{item.id}'
             """)
             self.conn.commit()
@@ -63,7 +67,7 @@ class ItemDAO:
             return False
         return True
     
-    def deletar_item(self, id):
+    def deletar_item(self, id):#ok
         try:
             self.cursor = self.conn.cursor()
             self.cursor.execute(f"""
@@ -76,7 +80,7 @@ class ItemDAO:
             return False
         return True
 
-    def search_all_for_name(self,nome):
+    def search_all_for_name(self,nome): #ok
         self.cursor = self.conn.cursor()
         self.cursor.execute(f"""
             SELECT * FROM Itens
@@ -84,6 +88,6 @@ class ItemDAO:
         """)
         resultados = []
         for resultado in self.cursor.fetchall():
-            resultados.append(Item(id=resultado[0], nome=resultado[1], preco=resultado[2]))
+            resultados.append(Product(id=resultado[0], name=resultado[1], price=resultado[2],descricao= resultado[3],image = resultado[4]))
         self.cursor.close()
         return resultados
