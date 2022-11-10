@@ -1,3 +1,4 @@
+import email
 from ipaddress import collapse_addresses
 from itertools import product
 from numpy import true_divide
@@ -235,6 +236,10 @@ def AbrirHome():
     with conta:
         st.title("Verificando se é você,")
         st.write( "faça o login novamente")
+        email = st.text_input(
+            "Digite o seu email :",
+            placeholder = "email 💌"
+       )
         usuario = st.text_input(
             "Digite o seu nome de Usuário :",
             placeholder = "Usuário 🙍‍♂️"
@@ -244,8 +249,9 @@ def AbrirHome():
             placeholder = "Senha 🔒",
             type= "password"
         )
-
-        def fui_apertado():
+        def alterar_Usuario(usuario,senha,email):
+            print("oi")
+        def fui_apertado(usuario,senha):
             print("Chamar validador de senhas")
             user1 = User(usuario, usuario, senha)
             print (user1)
@@ -264,6 +270,11 @@ def AbrirHome():
                     placeholder = "Senha 🔒",
                     type= "password"
                 )
+                st.button(
+                    label="Alterar",
+                    on_click=alterar_Usuario,
+                    kwargs={"usuario":usuario,"senha":senha, "email": email},
+                )
             else:
                 print("usuario não encontrado")
                 st.write("usuario não encontrado")
@@ -272,6 +283,8 @@ def AbrirHome():
                 label="🚪 Entrar 🔓",
                 help="Entrar na loja",
                 on_click=fui_apertado,
+                kwargs={"usuario":usuario,"senha":senha},
+
     )
         def apagar():
             #if (senha == "1"):

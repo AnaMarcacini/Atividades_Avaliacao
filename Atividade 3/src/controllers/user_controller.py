@@ -17,7 +17,7 @@ class UserController():
             
         ]
 
-    def getALL(self):#usar nas funções check user e login
+    def getALL():#usar nas funções check user e login
         return UsuarioDao.get_instance().get_all()
     
     def checkUser(self,user):
@@ -31,7 +31,8 @@ class UserController():
                 return True
         return False
 
-    def inserirUsuario(self,usuario):
+    def inserirUsuario(usuario):
+        print("ERRO NESSA FUNÇAÕ")
         return UsuarioDao.get_instance().inserir_usuario(usuario)
     def pegarUsuario(self, email):
         return UsuarioDao.get_instance().pegar_usuario(email)

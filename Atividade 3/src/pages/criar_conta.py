@@ -28,20 +28,24 @@ def AbrirCriacaoConta():
 
         )
 
-    def criarConta():
-        print("Chamar validador de senhas")
+    def criarConta(usuario, email, senha):
+        print("cRIANDO A CONTA")
         user1 = User(usuario, email, senha)
         print (user1)
-        if (UserController.inserirUsuario(user1)):
+        print("Erro de falta do argumento usuario a baixo")
+        if (UserController.inserirUsuario(usuario = user1)):
             print('usuario criado com sucesso')
+            st.write("usuario Criado")
         else:
             print("Erro na criação do usuario")
-            st.write("usuario não encontrado")
+            st.write("usuario já cadastrado")
 
     st.button(
             label="Criar conta ",
             help="Entrar na loja",
-            on_click=criarConta
+            on_click=criarConta,
+            #usuario, email, senha
+             kwargs={"usuario":usuario,"senha":senha, "email": email},
     )
     
     with col2:
