@@ -1,4 +1,5 @@
 import email
+from hashlib import new
 from ipaddress import collapse_addresses
 from itertools import product
 from numpy import true_divide
@@ -250,17 +251,14 @@ def AbrirHome():
             type= "password"
         )
         def alterar_Usuario(usuario,senha,email):
-            print("oi")
-        def fui_apertado(usuario,senha):
+            user = User(usuario,email,senha)
+            UserController.atualizarUsuario(user)
+        def fui_apertado(usuario,senha,email):
             print("Chamar validador de senhas")
             user1 = User(usuario, usuario, senha)
             print (user1)
             if (UserController().checkLogin(usuario,senha)):
                 st.title("Acesso concedido. Altere seu nome de usuario ou senha")
-#                email = st.text_input(
-#                    "Digite o seu email :",
-#                    placeholder = "email 💌"
-#                )
                 usuario = st.text_input(
                     "Digite o seu novo nome de Usuário :",
                     placeholder = "Usuário 🙍‍♂️"
@@ -283,32 +281,10 @@ def AbrirHome():
                 label="🚪 Entrar 🔓",
                 help="Entrar na loja",
                 on_click=fui_apertado,
-                kwargs={"usuario":usuario,"senha":senha},
+                kwargs={"usuario":usuario,"senha":senha,"email":email},
 
     )
-        def apagar():
-            #if (senha == "1"):
-                    st.title("Acesso concedido. Altere seu nome de usuario ou senha")
-    #                email = st.text_input(
-    #                    "Digite o seu email :",
-    #                    placeholder = "email 💌"
-    #                )
-                    usuario = st.text_input(
-                        "Digite o seu novo nome de Usuário :",
-                        placeholder = "Usuário 🙍‍♂️"
-                    )        
-                    senha = st.text_input(
-                        "Digite a sua nova senha :",
-                        placeholder = "Senha 🔒",
-                        type= "password"
-                    )
-            
-
-#        st.button(
-#                    label="🚪 teste 🔓",
-#                    help="Entrar na loja",
-#                    on_click=apagar,
-#        )
+          
 
 
     with novosProdutos:

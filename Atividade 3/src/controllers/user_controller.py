@@ -35,7 +35,7 @@ class UserController():
         return UsuarioDao.get_instance().inserir_usuario(usuario)
     def pegarUsuario(self, email):
         return UsuarioDao.get_instance().pegar_usuario(email)
-    def atualizarUsuario(self, usuario):
+    def atualizarUsuario(usuario):
         return UsuarioDao.get_instance().atualizar_Usuario(usuario)
     def deletarUsuario(self,email):
         return UsuarioDao.deletar_usuario(email)
